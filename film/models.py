@@ -22,12 +22,17 @@ class Movie(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
-    #run_time =  
     genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
     synopsis = models.TextField()
     director = models.CharField(max_length=200, unique=True)
     excerpt = models.TextField(blank=True)
     added_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-added_on"]
+
+    def __str__(self):
+        return f"{self.title} | {self.year}"
 
 
 class Review(models.Model):

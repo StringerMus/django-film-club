@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Movie
 
 # Create your views here.
-def hello_world(request):
-    return HttpResponse("Hello world!")
+
+
+class FilmList(generic.ListView):
+    queryset = Movie.objects.all()
+    template_name = "film_list.html"
