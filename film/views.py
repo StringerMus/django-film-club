@@ -7,4 +7,4 @@ from .models import Movie
 
 class FilmList(generic.ListView):
     queryset = Movie.objects.all()
-    template_name = "film_list.html"
+    template_name = "film/film_list.html"
