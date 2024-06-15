@@ -1,0 +1,30 @@
+[
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "Django Unchained",
+            "slug": "django-unchained",
+            "year": 2012,
+            "genre": "WESTERN",
+            "synopsis": "<p>With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.<p>",
+            "director": "Quentin Tarantino",
+            "excerpt": "A freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.",
+            "added_on": "2024-06-01T09:43:19.754Z"
+        }
+    },
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "Interstellar",
+            "slug": "interstellar",
+            "year": 2014,
+            "genre": "SCI-FI",
+            "synopsis": "<p>When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.<p>",
+            "director": "Christopher Nolan",
+            "excerpt": "When Earth becomes uninhabitable, an ex-NASA pilot and a team of researchers mission is to find a new planet for humans.",
+            "added_on": "2024-06-08T09:43:19.754Z"
+        }
+    },
+]
