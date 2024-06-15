@@ -9,7 +9,7 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for films in film_list %}
+                {% for movies in film %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -49,4 +49,9 @@
 </div>
 
 <!-- index.html content ends here -->
+{% endblock %}
+
+{% block copyright %}
+    Django's Film Club<br>
+    Copyright 2024
 {% endblock %}
