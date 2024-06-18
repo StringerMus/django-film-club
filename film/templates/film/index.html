@@ -6,10 +6,10 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Movie Entries Column -->
+        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for movies in film %}
+                {% for movie in movie_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -18,7 +18,7 @@
                                     <p class="author">Author: {{ movie.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="film-link">
+                            <a href="#" class="post-link">
                                 <h2 class="card-title">{{ movie.title }}</h2>
                             </a>
 
@@ -49,9 +49,4 @@
 </div>
 
 <!-- index.html content ends here -->
-{% endblock %}
-
-{% block copyright %}
-    Django's Film Club<br>
-    Copyright 2024
 {% endblock %}
