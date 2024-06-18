@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Movie
+from .models import Movie, Review
 
 
 # Create your views here.
@@ -14,7 +14,7 @@ def film_detail(request, slug):
     queryset = Movie.objects.all()
     film = get_object_or_404(queryset, slug=slug)
     reviews = film.reviews.all().order_by("-created_on")
-    #review_count = film.reviews.filter.count()
+    review_count = film.reviews.filter().count()
 
     return render(
         request,
@@ -22,6 +22,6 @@ def film_detail(request, slug):
         {
             "movie": film,
             "review": reviews,
-            #"review_count": review_count,
+            "review_count": review_count,
         },
     )
