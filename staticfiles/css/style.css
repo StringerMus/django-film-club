@@ -1,9 +1,42 @@
-.navbar{
-    background-color: #ff0051;
+/*to override default browswer styles*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+/*General styles*/
 body {
-    background-color: #F9FAFC;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: ;
+    font-family: "Hind Madurai", sans-serif;
+    letter-spacing: 0px;
+    color: rgb(122, 231, 244);
+}
+
+/*navbar*/
+.navbar-brand {
+    color: #f3f7f6;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    letter-spacing: 1px;
+    font-family: "Paytone One", sans-serif;
+}
+
+.navbar{
+    background-color: #ff0066;
+}
+
+nav a{
+    font-family: "Hind Madurai";
+    letter-spacing: 0.5px;
+}
+
+/*main content*/
+body {
+    background-color: #e3fbff;
 }
 
 .brand {
@@ -11,10 +44,6 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
-}
-
-.red-o {
-    color: #E84610;
 }
 
 .thin {
