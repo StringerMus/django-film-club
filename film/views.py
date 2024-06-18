@@ -8,4 +8,4 @@ from .models import Movie
 class FilmList(generic.ListView):
     queryset = Movie.objects.all()
     template_name = "film/index.html"
-    paginate_by = 6
+    paginate_by = 3

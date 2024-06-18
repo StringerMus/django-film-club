@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Movies Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for movie in movie_list %}
@@ -15,16 +15,18 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ movie.author }}</p>
+                                    <p class="author">{{ movie.year }} | {{ movie.genre }}</p>
                                 </div>
+
                             </div>
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ movie.title }}</h2>
+                                <p class="card-text">{{ movie.excerpt }}</p>
                             </a>
-
                             <hr />
-                            <p class="card-text text-muted h6">{{ movie.added_on}}
+                            <p class="card-text text-muted h6">{{ movie.added_on }}
                             </p>
+
                         </div>
                     </div>
                 </div>
@@ -40,8 +42,15 @@
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+            </li>
+            {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a>
+            </li>
             {% endif %}
         </ul>
     </nav>

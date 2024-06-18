@@ -15,6 +15,7 @@ GENRE_CHOICES = (
     ('documentary','DOCUMENTARY'),
     ('fantasy','FANTASY'),
     ('romance','ROMANCE'),
+    ('crime','CRIME'),
 )
 
 # Create your models here.
@@ -24,7 +25,7 @@ class Movie(models.Model):
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
     genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
     synopsis = models.TextField()
-    director = models.CharField(max_length=200, unique=True)
+    director = models.CharField(max_length=200, unique=False)
     excerpt = models.TextField(blank=True)
     added_on = models.DateTimeField(auto_now_add=True)
 

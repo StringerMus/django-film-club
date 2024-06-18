@@ -26,5 +26,75 @@
             "excerpt": "When Earth becomes uninhabitable, an ex-NASA pilot and a team of researchers mission is to find a new planet for humans.",
             "added_on": "2024-06-08T09:43:19.754Z"
         }
+    },
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "Parasite",
+            "slug": "parasite",
+            "year": 2019,
+            "genre": "thriller",
+            "synopsis": "<p>When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.<p>",
+            "director": "Bong Joon-ho",
+            "excerpt": "When Earth becomes uninhabitable, an ex-NASA pilot and a team of researchers mission is to find a new planet for humans.",
+            "added_on": "2024-06-08T09:43:19.754Z"
+        }
+    },
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "The Godfather",
+            "slug": "the-godfather",
+            "year": 1972,
+            "genre": "crime",
+            "synopsis": "<p>Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son, Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.<p>",
+            "director": "Francis Ford Coppola",
+            "excerpt": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son, Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
+            "added_on": "2024-06-11T09:43:19.754Z"
+        }
+    },
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "Dangal",
+            "slug": "dangal",
+            "year": 2016,
+            "genre": "drama",
+            "synopsis": "<p>Mahavir Singh Phogat, a former wrestler, decides to fulfil his dream of winning a gold medal for his country by training his daughters for the Commonwealth Games despite the existing social stigmas.<p>",
+            "director": "Nitesh Tiwari",
+            "excerpt": "Mahavir Singh Phogat, a former wrestler, decides to fulfil his dream of winning a gold medal for his country by training his daughters for the Commonwealth Games despite the existing social stigmas.",
+            "added_on": "2024-06-18T09:43:19.754Z"
+        }
+    },
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "The Wailing",
+            "slug": "the-wailing",
+            "year": 2016,
+            "genre": "horror",
+            "synopsis": "<p>When an outsider visits a village, its inhabitants experience a mysterious epidemic. A police officer then tries to solve the mystery behind the outbreak to save his sick daughter.<p>",
+            "director": "Na Hong-jin",
+            "excerpt": "When an outsider visits a village, its inhabitants experience a mysterious epidemic. A police officer then tries to solve the mystery behind the outbreak to save his sick daughter.",
+            "added_on": "2024-06-25T09:43:19.754Z"
+        }
+    },
+    {
+        "model": "film.movie",
+        "pk": null,
+        "fields": {
+            "title": "The Gentlemen",
+            "slug": "the-gentlemen",
+            "year": 2019,
+            "genre": "action",
+            "synopsis": "<p>When cannabis mogul Mickey Pearson plans to sell his profitable marijuana empire following his retirement, it stimulates an array of wrongdoings in the name of greed.<p>",
+            "director": "Guy Ritchie",
+            "excerpt": "When cannabis mogul Mickey Pearson plans to sell his profitable marijuana empire following his retirement, it stimulates an array of wrongdoings in the name of greed.",
+            "added_on": "2024-07-02T09:43:19.754Z"
+        }
     }
 ]
