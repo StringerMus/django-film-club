@@ -38,11 +38,11 @@ class Movie(models.Model):
 
 class Review(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    film = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="review_subject")
+    film = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="reviews")
     slug = models.SlugField(max_length=200, unique=True)
     #rating = 
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="reviews_author"
+        User, on_delete=models.CASCADE, related_name="review_author"
         )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

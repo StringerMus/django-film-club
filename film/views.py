@@ -13,9 +13,15 @@ class FilmList(generic.ListView):
 def film_detail(request, slug):
     queryset = Movie.objects.all()
     film = get_object_or_404(queryset, slug=slug)
+    reviews = film.reviews.all().order_by("-created_on")
+    #review_count = film.reviews.filter.count()
 
     return render(
         request,
         "film/film_detail.html",
-        {"movie": film},
+        {
+            "movie": film,
+            "review": reviews,
+            #"review_count": review_count,
+        },
     )

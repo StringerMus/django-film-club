@@ -29,6 +29,42 @@
             </div>
         </div>
     </div>
+
+    <!-- Displaying count of comments -->
+  <div class="row">
+    <div class="col-12">
+      <strong class="text-secondary">
+        <i class="far fa-comments"></i> {{ review_count }}
+      </strong>
+    </div>
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
+
+  <!-- Displaying Reviews -->
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <h3>Reviews:</h3>
+      <div class="card-body">
+        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+        {% for review in review %}
+        <div class="p-2 comments">
+          <p class="font-weight-bold">
+            <h3>{{ review.title }}</h3>
+            <h4>by {{ review.author }}</h4>
+          </p>
+          <div id="reivew{{ review.id }}">
+            {{ review.content | safe }}
+            {{ review.created_on }}
+          </div>
+          </p>
+        </div>
+        <!-- Our for loop ends here -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}
