@@ -17,5 +17,5 @@ def film_detail(request, slug):
     return render(
         request,
         "film/film_detail.html",
-        {"film": film},
+        {"movie": film},
     )
