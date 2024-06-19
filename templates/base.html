@@ -80,6 +80,22 @@
     </div>
   </nav>
 
+  <!-- displaying Django messages -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible
+          fade show" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
     <!--Main Content-->
     <main class="flex-shrink-0 main-bg">
 
@@ -89,19 +105,17 @@
       <p class="text-end m-3">You are not logged in</p>
       {% endif %}
 
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+      {% block content %}
+      <!-- Content Goes here -->
+      {% endblock content %}
 
     </main>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">
-            {% block copyright %}
-                Django's Film Club estd 2024
-            {% endblock copyright %}
-        </p>
+      <p class="m-0 text-center text-white">
+            {% block copyright %}Django's Film Club estd 2024{% endblock copyright %}
+          </p>
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
