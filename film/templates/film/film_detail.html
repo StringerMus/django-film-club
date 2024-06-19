@@ -73,7 +73,7 @@
         {% if user.is_authenticated %}
         <h3>Leave a review on the film:</h3>
         <p>Posting as: {{ user.username }}</p>
-        <form id="reviewForm" method="post" style="margin-top: 1.3em;">
+        <form id="reviewForm" method="POST" style="margin-top: 1.3em;">
           {{ review_form | crispy }}
           {% csrf_token %}
           <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
@@ -99,7 +99,7 @@
   <!-- Displaying Comments -->
   <div class="row">
     <div class="col-md-8 card mb-4  mt-3 ">
-      <h3>Comments:</h3>
+      <h4>Comments:</h4>
       <div class="card-body">
         <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
         {% for comment in comments %}
@@ -130,9 +130,9 @@
   <div class="col-md-4 card mb-4 mt-3">
     <div class="card-body">
       {% if user.is_authenticated %}
-      <h3>Leave a comment:</h3>
+      <h3>Leave a comment on review:</h3>
       <p>Posting as: {{ user.username }}</p>
-      <form id="commentForm" method="post" style="margin-top: 1.3em;">
+      <form id="commentForm" method="POST" style="margin-top: 1.3em;">
         {{ comment_form | crispy }}
         {% csrf_token %}
         <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
