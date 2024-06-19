@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
-from .models import Movie, Review
+from .models import Movie, Review, Comment
 from .forms import ReviewForm
 
 
+# Create your views here.
 class FilmList(generic.ListView):
     queryset = Movie.objects.all()
     template_name = "film/index.html"
@@ -16,6 +17,10 @@ def film_detail(request, slug):
     film = get_object_or_404(queryset, slug=slug)
     reviews = film.reviews.all().order_by("-created_on")
     review_count = film.reviews.filter().count()
+
+    comments_obj = Comment.objects.all()
+    comments = comments_obj.all().order_by("-created_on")
+    #review_count = film.reviews.filter().count()
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
@@ -39,5 +44,7 @@ def film_detail(request, slug):
             "review": reviews,
             "review_count": review_count,
             "review_form": review_form,
+            "comments": comments,
+            #"review_count": review_count,
         },
     )
