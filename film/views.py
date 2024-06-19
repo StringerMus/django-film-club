@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Movie, Review, Comment
-from .forms import ReviewForm
+from .forms import ReviewForm, CommentForm
 
 
 # Create your views here.
@@ -21,6 +21,7 @@ def film_detail(request, slug):
     comments_obj = Comment.objects.all()
     comments = comments_obj.all().order_by("-created_on")
     #review_count = film.reviews.filter().count()
+    comment_form = CommentForm()
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
@@ -46,5 +47,6 @@ def film_detail(request, slug):
             "review_form": review_form,
             "comments": comments,
             #"review_count": review_count,
+            "comment_form": comment_form,
         },
     )
