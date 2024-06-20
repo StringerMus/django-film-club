@@ -65,7 +65,7 @@ def film_detail(request, slug):
 
 
 #edit reviews
-def review_edit(request, slug, comment_id):
+def review_edit(request, slug, review_id):
     """
     view to edit reviews
     """

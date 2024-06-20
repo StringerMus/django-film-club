@@ -81,7 +81,11 @@
         {% else %}
         <p>Log in to leave a review</p>
         {% endif %}
+        <!--edit reviews-->
+        {% if user.is_authenticated and review.author == user %}
+        <button class="btn btn-edit" review_id="{{ review.id }}">Edit</button>
       </div>
+      {% endif %}
     </div>
 
     <!-- Displaying count of comments -->
@@ -147,3 +151,7 @@
 </div>
 
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/reviews.js' %}"></script>
+{% endblock %}
