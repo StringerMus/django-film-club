@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 import datetime
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -24,6 +25,7 @@ class Movie(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
     genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
+    featured_image = CloudinaryField('image', default='placeholder')
     synopsis = models.TextField()
     director = models.CharField(max_length=200, unique=False)
     excerpt = models.TextField(blank=True)
