@@ -15,14 +15,36 @@ class FilmList(generic.ListView):
 def film_detail(request, slug):
     queryset = Movie.objects.all()
     film = get_object_or_404(queryset, slug=slug)
+    
     reviews = film.reviews.all().order_by("-created_on")
     review_count = film.reviews.filter().count()
 
     comments_obj = Comment.objects.all()
     comments = comments_obj.all().order_by("-created_on")
-    #review_count = film.reviews.filter().count()
-    comment_form = CommentForm()
+    comment_count = comments.filter().count()
+
+    if request.method == "POST":
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Review submitted.'
+            )
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment has been submitted, pending approval.'
+            )
+
     review_form = ReviewForm()
+    comment_form = CommentForm()
 
     return render(
         request,
@@ -33,7 +55,7 @@ def film_detail(request, slug):
             "review_count": review_count,
             "review_form": review_form,
             "comments": comments,
-            #"review_count": review_count,
+            "comment_count": comment_count,
             "comment_form": comment_form,
         },
     )
