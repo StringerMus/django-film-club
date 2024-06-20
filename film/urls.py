@@ -9,4 +9,8 @@ urlpatterns = [
          views.review_edit, name='review_edit'),
     path('<slug:slug>/edit_comment/<int:comment_id>',
          views.comment_edit, name='comment_edit'),
+     path('<slug:slug>/delete_review/<int:review_id>',
+         views.review_delete, name='review_delete'),
+     path('<slug:slug>/delete_comment/<int:comment_id>',
+         views.comment_delete, name='comment_delete'),
 ]
