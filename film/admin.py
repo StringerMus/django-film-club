@@ -16,7 +16,7 @@ class FilmAdmin(SummernoteModelAdmin):
 @admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'film', 'author', 'status', 'created_on', 'updated_on')
+    list_display = ('title', 'film', 'author', 'created_on', 'updated_on')
     search_fields = ['title', 'film', 'author']
     list_filter = ('film', 'created_on', 'created_on',)
     prepopulated_fields = {'slug': ('title',)}

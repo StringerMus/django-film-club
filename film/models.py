@@ -39,12 +39,12 @@ class Movie(models.Model):
 class Review(models.Model):
     title = models.CharField(max_length=200, unique=True)
     film = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="reviews")
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="review_author")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    excerpt = models.TextField(blank=True)
+    status = models.IntegerField(choices=STATUS, default=1)
+    #excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
