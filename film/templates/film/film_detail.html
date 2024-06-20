@@ -59,6 +59,10 @@
           <div id="reivew{{ review.id }}">
             {{ review.content | safe }}
             {{ review.created_on }}
+            <!--edit reviews-->
+            {% if user.is_authenticated and review.author == user %}
+            <button class="btn btn-edit" review_id="{{ review.id }}">Edit</button>
+            {% endif %}
           </div>
           </p>
         </div>
@@ -81,11 +85,7 @@
         {% else %}
         <p>Log in to leave a review</p>
         {% endif %}
-        <!--edit reviews-->
-        {% if user.is_authenticated and review.author == user %}
-        <button class="btn btn-edit" review_id="{{ review.id }}">Edit</button>
       </div>
-      {% endif %}
     </div>
 
     <!-- Displaying count of comments -->
@@ -123,6 +123,10 @@
             This comment is awaiting approval
           </p>
           {% endif %}
+          <!--Edir comment-->
+          {% if user.is_authenticated and comment.author == user %}
+          <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+          {% endif %}
         </div>
         <!-- Our for loop ends here -->
         {% endfor %}
@@ -154,4 +158,5 @@
 
 {% block extras %}
 <script src="{% static 'js/reviews.js' %}"></script>
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
