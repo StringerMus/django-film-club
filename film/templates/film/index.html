@@ -24,7 +24,6 @@
                                 <div class="image-flash">
                                     <p class="author">{{ movie.year }} | {{ movie.genre }}</p>
                                 </div>
-
                             </div>
                             <a href="{% url 'film_detail' movie.slug %}" class="post-link">
                                 <h2 class="card-title">{{ movie.title }}</h2>
@@ -42,7 +41,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
@@ -54,6 +52,7 @@
                 <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
             </li>
             {% endif %}
+
             {% if page_obj.has_next %}
             <li>
                 <a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a>
