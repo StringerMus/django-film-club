@@ -56,8 +56,8 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link {% if request.path == post_url %}active{% endif %}" aria-current="page"
-            href="{% url 'post_film' %}">Admin</a>
+            <a class="nav-link {% if request.path == post_film %}active{% endif %}" aria-current="page"
+            href="{% url 'post_film' %}">Posts</a>
           </li>
           {% endif %}
 

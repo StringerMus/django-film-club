@@ -9,7 +9,7 @@ from .forms import FilmForm
 
 def post_film(request):
     """
-    Renders the Admin page
+    Renders the Posts page
     """
     if request.method == "POST":
         film_form = FilmForm(data=request.POST)
