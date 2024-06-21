@@ -31,7 +31,3 @@ class CommentAdmin(SummernoteModelAdmin):
     list_filter = ('review', 'created_on',)
     prepopulated_fields = {}
     summernote_fields = ('body',)
-
-
-# Register your models here.
-

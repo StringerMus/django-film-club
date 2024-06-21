@@ -1,4 +1,4 @@
-from .models import Movie, Review, Comment
+from .models import Review, Comment
 from django import forms
 
 
