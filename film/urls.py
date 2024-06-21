@@ -13,4 +13,5 @@ urlpatterns = [
          views.review_delete, name='review_delete'),
      path('<slug:slug>/delete_comment/<int:comment_id>',
          views.comment_delete, name='comment_delete'),
+    #path('<slug:slug>/', views.post_film, name='post_film'),
 ]
