@@ -26,13 +26,18 @@ body {
 }
 
 .navbar{
-    background-color: #ff0066;
+    background-color: #181c31;m
 }
 
 nav a{
     font-family: "Hind Madurai";
     letter-spacing: 0.5px;
 }
+
+.active {
+    color: rgb(255, 205, 66);
+    text-decoration: underline;
+  }
 
 /*main content*/
 body {
