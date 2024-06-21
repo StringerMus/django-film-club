@@ -8,10 +8,11 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ film.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ film.director }} | {{ film.year }}</p>
+                <p class="card-text">
+                  {{ film.synopsis | safe }}
+              </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
@@ -21,18 +22,7 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The film content goes inside the card-text. -->
-                <p class="card-text">
-                    {{ film.synopsis | safe }}
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Displaying count of comments -->
+  <!-- Displaying count of comments -->
   <div class="row">
     <div class="col-12">
       <strong class="text-secondary">

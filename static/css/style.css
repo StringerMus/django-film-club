@@ -90,26 +90,45 @@ nav a{
 }
 
 /*index.html*/
-
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
+.author {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
-.masthead-text {
-    background-color: #445261;
+.post-link {
+    text-decoration: none;
+    color: #181c31;
+}
+
+.post-link:hover {
+    color: #ffad60;
+}
+
+.page-link {
+    background-color: #181c31;
+    color: #ffffff;
+}
+
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+/*film_detail*/
+.masthead {
+    position: relative;
+    display: inline-block;
+    height: vh;
+    width: 90%;
+    background-color: #181c31;
     color: white;
     position: relative;
 }
 
 .masthead-image {
     position: relative;
-    overflow: hidden;
+    overflow: ;
 }
 
 .masthead-image:after {
@@ -119,31 +138,13 @@ nav a{
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #ff00dd;
-}
-
-.post-link:hover,
-.page-link {
-    color: #ff04ea;
-}
-
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
 }
 
 .post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
+    background-color:#ffad60 ;
+    margin: 2%;
+    padding: 0.2rem;
+    color: rgb(255, 255, 255);
 }
 
 .btn-signup,
