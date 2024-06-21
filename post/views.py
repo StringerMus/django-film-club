@@ -1,16 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from django.contrib import messages
 from film.models import Movie
 from .forms import FilmForm
 
 
 # Create your views here.
+class FilmList(generic.ListView):
+    queryset = Movie.objects.all()
+    template_name = "post/post_film.html"
+    #paginate_by = 3
 
 
 def post_film(request):
-    """
-    Renders the Posts page
-    """
+    queryset = Movie.objects.all()
+    film = get_object_or_404(queryset, slug=slug)
+
     if request.method == "POST":
         film_form = FilmForm(data=request.POST)
         if film_form.is_valid():
@@ -20,7 +25,7 @@ def post_film(request):
                 'The film has been added to the film catalogue.'
             )
 
-    movie = Movie.objects.all().order_by('-updated_on').first()
+    film = Movie.objects.all().order_by('-updated_on').first()
     film_form = FilmForm()
 
     return render(
