@@ -1,10 +1,4 @@
 /*to override default browswer styles*/
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 /*General styles*/
 body {
     min-height: 100vh;
@@ -45,8 +39,7 @@ nav a{
 }
 
 .active {
-    color: #ffad60;
-    text-decoration: underline;
+    text-decoration: underline 2px solid #ffad60;
   }
 
 .thin {
@@ -67,6 +60,9 @@ nav a{
     background-color: rgb(235, 239, 255);
 }
 
+.sign-mes{
+}
+
 .card {
     border: #ffad60;
     background-color: white;
@@ -84,12 +80,40 @@ nav a{
     background-color: #ffad60;
 }
 
-.scale {
-    width: 10%;
-    height: auto;
+/*index.html*/
+.banner{
+    height: 500px;
+    background: url(../images/western.jpg) no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/*index.html*/
+.cover-text {
+    text-align: center;
+    font-size:17px;
+    color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.144);
+    padding: 0 20% 0;
+}
+
+.cover-text h1 {
+    font-family: "Paytone One";
+    padding-bottom: 2%;
+}
+
+.film-button{
+    text-decoration: none;
+    color: white;
+}
+
+.film-button p{
+    padding: 1px 1px 1px;
+    margin: 3px 1px 3px;
+    background-color: #ff004c;
+}
+
 .author {
     color: white;
     margin: 4px;
@@ -128,7 +152,12 @@ nav a{
 
 .masthead-image {
     position: relative;
-    overflow: ;
+    overflow: hidden;
+}
+
+.scale {
+    width: 10%;
+    height: auto;
 }
 
 .masthead-image:after {

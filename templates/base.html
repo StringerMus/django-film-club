@@ -53,7 +53,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page"
-            href="{% url 'home' %}">Films</a>
+            href="#film-catalogue">Films</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
@@ -101,17 +101,17 @@
 
     <!--Main Content-->
     <main class="flex-shrink-0 main-bg">
-
-      {% if user.is_authenticated %}
-      <p class="text-end m-3">Hi {{ user }}</p>
-      {% else %}
-      <p class="text-end m-3">You are not logged in</p>
-      {% endif %}
+      <div class="sign-mes">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">Hi {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
+      </div>
 
       {% block content %}
       <!-- Content Goes here -->
       {% endblock content %}
-
     </main>
 
     <!-- Footer -->

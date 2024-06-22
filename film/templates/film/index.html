@@ -6,9 +6,21 @@
 <div class="container-fluid">
     <div class="row">
 
+        <div class="banner">
+            <div class="cover-text">
+                <h1>Welcome to django's.film-club</h1>
+                <p>We are a tribe of movie lovers! Anyone can join our community in watching and reviewing the weekly films
+                    subjects and share your opinions who share your passion.
+                </p>
+                <a class="film-button" href="#film-catalogue">
+                    <p>Film Catalogue</p>
+                </a>
+            </div>
+        </div>
+
         <!-- Movies Entries Column -->
         <div class="col-12 mt-3 left">
-            <div class="row">
+            <div class="row" id="film-catalogue">
                 {% for movie in movie_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
