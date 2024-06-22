@@ -24,36 +24,32 @@
         <i class="far fa-comments"></i> {{ review_count }}
       </strong>
       <!-- Displaying Reviews -->
-      <h3>Reviews:</h3>
+      <h4>Reviews:</h4>
       <div class="card-body">
-        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+        <!-- Loop through reviews -->
         {% for review in review %}
         <div class="p-2 reviews">
-          <p class="font-weight-bold">
             <h3>{{ review.title }}</h3>
-            <h4>by {{ review.author }}</h4>
-          </p>
           <div id="reivew{{ review.id }}">
             {{ review.content | safe }}
+            <h6>by {{ review.author }}</h6>
             {{ review.created_on }}
-            <!--edit reviews-->
+            <!--delete & edit reviews-->
             {% if user.is_authenticated and review.author == user %}
             <button class="btn btn-delete" review_id="{{ review.id }}">Delete</button>
             <button class="btn btn-edit" review_id="{{ review.id }}">Edit</button>
             {% endif %}
           </div>
-          </p>
         </div>
-        <!-- Our for loop ends here -->
         {% endfor %}
       </div>
     </div>
 
-    <!-- Creating New Reviews -->
-    <div class="col-md-4 card mb-4 mt-3">
+    <!-- new review form -->
+    <div class="col-md-4 card mt-2 new-rev">
       <div class="card-body">
         {% if user.is_authenticated %}
-        <h3>Leave a review on the film:</h3>
+        <h3>Post your review on the film:</h3>
         <p>Posting as: {{ user.username }}</p>
         <form id="reviewForm" method="POST" style="margin-top: 1.3em;">
           {{ review_form | crispy }}

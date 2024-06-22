@@ -36,7 +36,19 @@ nav a{
 
 /*footer*/
 .dark-bg {
-    background-color: #ffad60;
+    
+}
+
+.footer{
+    background-color: #181c31;
+    color:#ffad60;
+    font-size: 15px;
+}
+
+.social{
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
 }
 
 /*main bg*/
@@ -82,9 +94,11 @@ nav a{
 }
 
 .film-button p{
-    padding: 1px 1px 1px;
-    margin: 3px 1px 3px;
+    margin-top: 5px;
+    padding: 6px;
     background-color: #ff004c;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.356);
+    display: inline;
 }
 
 .post-link {
@@ -96,6 +110,7 @@ nav a{
     color: #ffad60;
 }
 
+/*pagination*/
 .page-link {
     background-color: #181c31;
     color: #ffffff;
@@ -145,6 +160,15 @@ nav a{
     padding-left: 20px;
 }
 
+.new-rev{
+    background-color: #181c31;
+    color: white
+}
+
+.new-rev h3{
+    color: #ffad60
+}
+
 /*signup page*/
 .btn-signup,
 .btn-edit {
@@ -177,7 +201,7 @@ nav a{
 
 .btn-delete {
     color: #fff;
-    background: #ffc343;
+    background: red;
 }
 
 .btn-like:hover,
