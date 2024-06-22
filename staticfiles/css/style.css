@@ -60,24 +60,17 @@ nav a{
     background-color: rgb(235, 239, 255);
 }
 
-.sign-mes{
-}
-
 .card {
     border: #ffad60;
     background-color: white;
 }
 
-.image-container {
-    position: relative;
+.card-img-top {
+    padding-bottom: 5%;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #ffad60;
+.image-container {
+    position: relative;
 }
 
 /*index.html*/
@@ -114,12 +107,6 @@ nav a{
     background-color: #ff004c;
 }
 
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
 .post-link {
     text-decoration: none;
     color: #181c31;
@@ -137,6 +124,19 @@ nav a{
 .post-title {
     margin-top: 10%;
     margin-left: 5%;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 10%;
+    min-width: 30%;
+    background-color: #ffad60;
+}
+
+.year {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 /*film_detail*/
