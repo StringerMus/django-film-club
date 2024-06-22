@@ -4,44 +4,31 @@
 
 
 {% block content %}
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ film.title }}</h1>
-                <p class="post-subtitle">{{ film.director }} | {{ film.year }}</p>
-                <p class="card-text">
-                  {{ film.synopsis | safe }}
-              </p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
-            </div>
-        </div>
+<div class="container card">
+    <div class="col-md-12 pt-4 film-card">
+      <h1 class="film-title">{{ film.title }}</h1>
+      <p class="film-subtitle">{{ film.director }} | {{ film.year }}</p>
+      <p class="card-text synopsis">
+         {{ film.synopsis | safe }}
+      </p>
+      <img src="{% static 'images/western.jpg' %}" class="img-fluid" alt="placeholder" >
     </div>
+  </div>
 </div>
 
 <div class="container">
-  <!-- Displaying count of comments -->
   <div class="row">
-    <div class="col-12">
-      <strong class="text-secondary">
+    <div class="col-md-8 card mt-2 review-card">
+      <!-- Displaying count of reviews -->
+      <strong class="r-count">
         <i class="far fa-comments"></i> {{ review_count }}
       </strong>
-    </div>
-    <div class="col-12">
-      <hr>
-    </div>
-  </div>
-
-  <!-- Displaying Reviews -->
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
+      <!-- Displaying Reviews -->
       <h3>Reviews:</h3>
       <div class="card-body">
         <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
         {% for review in review %}
-        <div class="p-2 comments">
+        <div class="p-2 reviews">
           <p class="font-weight-bold">
             <h3>{{ review.title }}</h3>
             <h4>by {{ review.author }}</h4>
@@ -168,6 +155,6 @@
 {% endblock content %}
 
 {% block extras %}
-<script src="{% static 'js/reviews.js' %}"></script>
+<script src="{% static 'js/reviews.js'  %}"></script>
 <script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

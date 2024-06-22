@@ -1,54 +1,38 @@
 /*to override default browswer styles*/
 /*General styles*/
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: ;
     font-family: "Hind Madurai", sans-serif;
-    letter-spacing: 0px;
-    color: #ffad60;
 }
 
 /*base.html*/
 /*navbar*/
-.navbar-brand {
-    color: #f3f7f6;
-    font-size: 1.2rem;
-    margin-left: 1rem;
-    letter-spacing: 1px;
-    font-family: "Paytone One", sans-serif;
-}
-
 .navbar{
     background-color: #181c31;
 }
 
 .title {
     color: #ffad60;
-    margin: auto;
-    width:;
-    padding: ;
-    font-size: 1.5rem;
     font-family: "Paytone One";
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav a{
     font-family: "Hind Madurai";
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
+}
+
+.sign-mes{
+    position: absolute;
+    display: flex;
+    color: white;
+    align-items: right;
 }
 
 .active {
     text-decoration: underline 2px solid #ffad60;
   }
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #ff0000;
-}
 
 /*footer*/
 .dark-bg {
@@ -60,25 +44,14 @@ nav a{
     background-color: rgb(235, 239, 255);
 }
 
-.sign-mes{
-}
-
-.card {
-    border: #ffad60;
-    background-color: white;
+.card-img-top {
+    padding-bottom: 5%;
 }
 
 .image-container {
     position: relative;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #ffad60;
-}
 
 /*index.html*/
 .banner{
@@ -114,12 +87,6 @@ nav a{
     background-color: #ff004c;
 }
 
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
 .post-link {
     text-decoration: none;
     color: #181c31;
@@ -134,48 +101,51 @@ nav a{
     color: #ffffff;
 }
 
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
+.image-flash {
+    position: absolute;
+    bottom: 10%;
+    min-width: 30%;
+    background-color: #ffad60;
 }
+
+.year {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.card {
+    background-color: white;
+}
+
 
 /*film_detail*/
-.masthead {
-    position: relative;
-    display: inline-block;
-    height: vh;
-    width: 90%;
-    background-color: #181c31;
+.film-title{
+    font-family: "Hind Madurai";
+}
+
+.film-subtitle{
+    display: inline;
+    background-color: #ffad60;
+    margin-top: 5px;
+    padding: 0 8px 0;
     color: white;
-    position: relative;
 }
 
-.masthead-image {
-    position: relative;
-    overflow: hidden;
+.film-card{
+    margin-bottom: 12px;
 }
 
-.scale {
-    width: 10%;
-    height: auto;
+.r-count{
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
+.review-card{
+    padding-left: 20px;
 }
 
-.post-subtitle {
-    background-color:#ffad60 ;
-    margin: 2%;
-    padding: 0.2rem;
-    color: rgb(255, 255, 255);
-}
-
+/*signup page*/
 .btn-signup,
 .btn-edit {
     background-color: #188181;
