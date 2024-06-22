@@ -32,12 +32,12 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-  <nav class="navbar navbar-expand-sm" navbar bg-dark border-bottom border-body data-bs-theme="dark">
+  <nav class="navbar sticky-top navbar-expand-sm" navbar bg-dark border-bottom border-body data-bs-theme="dark">
     <div class="container">
-      <a href="#" class="navbar-brand mb-0" h1>
-        <img class="d-inline-block align-top" src="" width="30" height="30"/>
+      <a href="{% url 'home' %}" class="navbar-brand mb-0 title">
+        <!--<img class="d-inline-block align-top" src="" width="30" height="30"/>-->
+        <h3 class="">django's.film-club</h3>
       </a>
-      <h1 class="title">django's.film-club</h1>
 
       <!--Burger menu appear when screen small-->
       <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
         
       <!--navbar links-->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav me-2">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page"
             href="{% url 'home' %}">Home</a>
@@ -113,6 +113,7 @@
       <!-- Content Goes here -->
       {% endblock content %}
     </main>
+    
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
