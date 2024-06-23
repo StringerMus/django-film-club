@@ -64,7 +64,6 @@ nav a{
     position: relative;
 }
 
-
 /*index.html*/
 .banner{
     height: 500px;
@@ -148,6 +147,11 @@ nav a{
 }
 
 .film-card{
+    z-index: 1;
+}
+
+.det-img{
+    z-index: 2;
     margin-bottom: 12px;
 }
 
