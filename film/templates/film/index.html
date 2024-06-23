@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in movie.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/western.jpg' %}"
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                   alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ movie.featured_image.url }}"

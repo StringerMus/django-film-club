@@ -53,7 +53,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page"
-            href="#film-catalogue">Films</a>
+            href="{% url 'home' %}#film-catalogue">Films</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
