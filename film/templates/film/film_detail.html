@@ -19,7 +19,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 card mt-2 review-card">
+    <div class="col-md-8 card mt-3 mb-5 review-card">
       <!-- Display count of reviews -->
       <strong class="r-count">
         <i class="far fa-comments"></i> {{ review_count }}
@@ -30,7 +30,7 @@
         <!-- Loop through reviews -->
         {% for review in review %}
         <div class="p-2 reviews">
-          <div id="reivew{{ review.id }}"></
+          <div id="reivew{{ review.id }}">
             <h3>{{ review.title }}</h3>
             {{ review.content | linebreaks }}
           </div>
@@ -47,10 +47,10 @@
     </div>
 
     <!-- new review form -->
-    <div class="col-md-4 card mt-2 new-rev">
+    <div class="col-md-4 card mt-3 mb-5 new-rev">
       <div class="card-body">
         {% if user.is_authenticated %}
-        <h3>Post your review on the film:</h3>
+        <h4>Post your review on the film:</h4>
         <p>Posting as: {{ user.username }}</p>
         <form id="reviewForm" method="POST" style="margin-top: 1.3em;">
           {{ review_form | crispy }}

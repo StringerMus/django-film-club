@@ -35,10 +35,6 @@ nav a{
   }
 
 /*footer*/
-.dark-bg {
-    
-}
-
 .footer{
     background-color: #181c31;
     color:#ffad60;
@@ -169,7 +165,7 @@ nav a{
     color: white
 }
 
-.new-rev h3{
+.new-rev h4{
     color: #ffad60
 }
 

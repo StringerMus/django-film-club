@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-5 offset-md-2">
       <h3>{% trans "Sign Up" %}</h3>
 
       <p>{% blocktrans %}
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-3 mb-5 offset-md-2">
       <form class="signup" id="signup_form" method="post"
         action="{% url 'account_signup' %}">
         {% csrf_token %}
