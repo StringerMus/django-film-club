@@ -14,7 +14,6 @@ class FilmList(generic.ListView):
 
 def post_film(request):
     queryset = Movie.objects.all()
-    film = get_object_or_404(queryset, slug=slug)
 
     if request.method == "POST":
         film_form = FilmForm(data=request.POST)
@@ -25,14 +24,14 @@ def post_film(request):
                 'The film has been added to the film catalogue.'
             )
 
-    film = Movie.objects.all().order_by('-updated_on').first()
+    film = Movie.objects.all().order_by('-added_on').first()
     film_form = FilmForm()
 
     return render(
         request,
         "post/post_film.html",
         {
-            "post": post,
+            "post": post_film,
             "film_form": film_form,
         },
     )
