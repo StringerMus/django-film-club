@@ -22,13 +22,12 @@ GENRE_CHOICES = (
 # Create your models here.
 class Movie(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, null=True)
+    slug = models.SlugField(max_length=200, unique=True)
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
     genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
     featured_image = CloudinaryField('image', default='placeholder')
     synopsis = models.TextField()
     director = models.CharField(max_length=200, unique=False)
-    excerpt = models.TextField(blank=True)
     added_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -46,7 +45,6 @@ class Review(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    #excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -54,17 +52,3 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.title} | by {self.author}"
-
-
-class Comment(models.Model):
-    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments_author")
-    body = models.TextField()
-    approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ["-created_on"]
-
-    def __str__(self):
-        return f"{self.body} | by {self.author}"

@@ -30,8 +30,8 @@
         <!-- Loop through reviews -->
         {% for review in review %}
         <div class="p-2 reviews">
-          <h3>{{ review.title }}</h3>
-          <div id="reivew{{ review.id }}">
+          <div id="reivew{{ review.id }}"></
+            <h3>{{ review.title }}</h3>
             {{ review.content | linebreaks }}
           </div>
           <h6>by {{ review.author }}</h6>
@@ -62,90 +62,25 @@
         {% endif %}
       </div>
     </div>
-
-    <!-- Displaying count of comments -->
-  <div class="row">
-    <div class="col-12">
-      <strong class="text-secondary">
-        <i class="far fa-comments"></i> {{ comment_count }}
-      </strong>
-    </div>
-    <div class="col-12">
-      <hr>
-    </div>
-  </div>
-  
-  <!-- Displaying Comments -->
-  <div class="row">
-    <div class="col-md-8 card mb-4 mt-3 ">
-      <h4>Comments:</h4>
-      <div class="card-body">
-        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-        {% for comment in comments %}
-        <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
-          <p class="font-weight-bold">
-            {{ comment.author }}
-            <span class="font-weight-normal">
-              {{ comment.created_on }}
-            </span> commented:
-          </p>
-          <div id="comment{{ comment.id }}">
-            {{ comment.body | safe }}
-          </div>
-          {% if not comment.approved and comment.author == user %}
-          <p class="approval">
-            This comment is awaiting approval
-          </p>
-          {% endif %}
-          <!--Edit & delete comments-->
-          {% if user.is_authenticated and comment.author == user %}
-          <button class="btn btn-delete"comment_id="{{ comment.id }}">Delete</button>
-          <!--<button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>-->
-          {% endif %}
-        </div>
-        <!-- Our for loop ends here -->
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  <!-- Creating New Comments -->
-  <div class="col-md-4 card mb-4 mt-3">
-    <div class="card-body">
-      {% if user.is_authenticated %}
-      <h3>Leave a comment on review:</h3>
-      <p>Posting as: {{ user.username }}</p>
-      <form id="commentForm" method="POST" style="margin-top: 1.3em;">
-        {{ comment_form | crispy }}
-        {% csrf_token %}
-        <button id="submitButton" type="submit" class="btn btn-signup btn-md">Submit</button>
-      </form>
-      {% else %}
-      <p>Log in to leave a comment</p>
-      {% endif %}
-    </div>
-  </div>
+  </div>  
+</div>
 
   <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="deleteModalLabel">Delete?</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        This review will be deleted permanently. Are you sure you want to delete the review?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+      </div>
     </div>
-    <div class="modal-body">
-      This will be deleted permanently. Are you sure you want to delete?
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
-    </div>
-  </div>
-</div>
-</div>
-
   </div>
 </div>
 
@@ -153,5 +88,4 @@
 
 {% block extras %}
 <script src="{% static 'js/reviews.js'  %}"></script>
-<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
