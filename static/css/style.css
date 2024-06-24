@@ -24,10 +24,9 @@ nav a{
 }
 
 .sign-mes{
-    position: absolute;
     display: flex;
-    color: white;
-    align-items: right;
+    flex-direction: row-reverse;
+    color: #ffad60;
 }
 
 .active {
@@ -131,7 +130,8 @@ nav a{
 
 /*film_detail*/
 .film-title{
-    font-family: "Hind Madurai";
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: bold;
 }
 
 .film-subtitle{
