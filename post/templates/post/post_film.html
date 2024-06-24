@@ -4,8 +4,9 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-2">
+    <div class="row ml-auto">
+        <!--New film form-->
+        <div class="col-12 col-md-7 mt-2 mb-5">
             <h2>Add a film</h2>
             <p>Please fill in the form below to add a weekly film to the catalogue for members to review.</p>
             <!-- form-->
@@ -14,6 +15,15 @@
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup btn-md">Submit</button>
             </form>
+        </div>
+        <!--Film catalogue-->
+        <div class="col-12 col-md-5 mt-5 mb-5">
+            <h5>Film Catalogue</h5>
+            {% for movie in movie_list %}
+            <div class="image-flash">
+                <p>{{ movie.title }} | {{ movie.year }}</p>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

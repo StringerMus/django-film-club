@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
+from django.utils.text import slugify
 from film.models import Movie
 from .forms import FilmForm
 
@@ -9,16 +10,19 @@ from .forms import FilmForm
 class FilmList(generic.ListView):
     queryset = Movie.objects.all()
     template_name = "post/post_film.html"
-    #paginate_by = 3
 
 
 def post_film(request):
     queryset = Movie.objects.all()
+    #film catlogue - bug - film list not appearing
+    #film = get_object_or_404(queryset)
+    #reviews = film.movies.all().order_by("-added_on")
 
     if request.method == "POST":
         film_form = FilmForm(data=request.POST)
         if film_form.is_valid():
             film_form.save()
+            #film_form.slug = slugify(film_form.title) - slug not auto filling
             messages.add_message(
                 request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
@@ -32,6 +36,7 @@ def post_film(request):
         "post/post_film.html",
         {
             "post": post_film,
+            #"catalogue" : catalogue,
             "film_form": film_form,
         },
     )

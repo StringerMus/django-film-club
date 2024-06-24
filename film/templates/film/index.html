@@ -39,7 +39,7 @@
                             </div>
                             <a href="{% url 'film_detail' movie.slug %}" class="post-link">
                                 <h2 class="card-title">{{ movie.title }}</h2>
-                                <p class="card-text">{{ movie.excerpt }}</p>
+                                <p class="card-text">{{ movie.synopsis | safe }}</p>
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ movie.added_on }}
