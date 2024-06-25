@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 import datetime
 
@@ -29,6 +30,15 @@ class Movie(models.Model):
     synopsis = models.TextField()
     director = models.CharField(max_length=200, unique=False)
     added_on = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # Generate the slug based on title and id
+            # Limit to 50 characters for safety
+            self.slug = slugify(self.title)[:50]
+            if self.id:
+                self.slug += '-' + str(self.id)
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ["-added_on"]

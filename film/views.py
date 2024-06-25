@@ -13,7 +13,7 @@ class FilmList(generic.ListView):
     paginate_by = 3
 
 
-#post reviews and comments
+#post reviews
 def film_detail(request, slug):
     queryset = Movie.objects.all()
     film = get_object_or_404(queryset, slug=slug)
