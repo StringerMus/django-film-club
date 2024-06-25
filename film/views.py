@@ -88,12 +88,12 @@ def review_delete(request, slug, review_id):
     return HttpResponseRedirect(reverse('film_detail', args=[slug]))
 
 
-def add_movie(request):
-    if request.method == 'POST':
-        form = FilmForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('post_film.html')
-    else:
-        form = MovieForm()
-    return render(request, 'post_film.html', {'form': form})
+#def add_movie(request):
+#    if request.method == 'POST':
+#        form = FilmForm(request.POST, request.FILES)
+#        if form.is_valid():
+#            form.save()
+#            return redirect('post_film.html')
+#    else:
+#        form = MovieForm()
+#    return render(request, 'post_film.html', {'form': form})

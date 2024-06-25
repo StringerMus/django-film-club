@@ -19,7 +19,7 @@ def post_film(request):
     #reviews = film.movies.all().order_by("-added_on")
 
     if request.method == "POST":
-        film_form = FilmForm(data=request.POST)
+        film_form = FilmForm(request.POST, request.FILES)
         if film_form.is_valid():
             film_form.save()
             messages.add_message(
@@ -27,8 +27,8 @@ def post_film(request):
                 'The film has been added to the film catalogue.'
             )
 
-    film = Movie.objects.all().order_by('-added_on').first()
     film_form = FilmForm()
+    film = Movie.objects.all().order_by('-added_on').first()
 
     return render(
         request,

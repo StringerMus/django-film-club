@@ -10,7 +10,7 @@
             <h2>Add a film</h2>
             <p>Please fill in the form below to add a weekly film to the catalogue for members to review.</p>
             <!-- form-->
-            <form method="post">
+            <form method="post" enctype='multipart/form-data'>
                 {{ film_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup btn-md">Submit</button>
