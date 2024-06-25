@@ -56,9 +56,17 @@ nav a{
     background: url(../images/western.jpg) no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 6%;
     align-items: center;
 }
+
+.banner h5{
+   padding: 1px 0 20px; 
+}
+
+.banner p{
+    padding-bottom: 15px; 
+ }
 
 .cover-text {
     text-align: center;
