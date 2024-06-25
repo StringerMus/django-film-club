@@ -23,25 +23,25 @@
                 {% for movie in movie_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
+                        <div class="card-body film-cat">
                             <div class="image-container">
-
-                                {% if "placeholder" in movie.featured_image.url %}
-                                <img class="card-img-top film-img" src="{% static 'images/default.jpg' %}" alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
-                                {% endif %}
-
+                                <div class="film-img">
+                                    {% if "placeholder" in movie.featured_image.url %}
+                                    <img class="card-img-top film-img" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                                    {% else %}
+                                    <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
+                                    {% endif %}
+                                </div>
                                 <div class="image-flash">
                                     <p class="year">{{ movie.year }} | {{ movie.genre }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'film_detail' movie.slug %}" class="post-link">
                                 <h2 class="card-title">{{ movie.title }}</h2>
-                                <p class="card-text">{{ movie.synopsis | safe }}</p>
+                                <p class="card-text synopsis">{{ movie.synopsis | safe }}</p>
                             </a>
                             <hr/>
-                            <p class="card-text text-muted h6">{{ movie.added_on }}
+                            <p class="card-text text-muted h6 date">{{ movie.added_on }}
                             </p>
                         </div>
                     </div>

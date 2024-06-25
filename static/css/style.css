@@ -46,20 +46,11 @@ nav a{
     text-decoration: none;
 }
 
-/*main bg*/
+/*index.html*/
 .main-bg {
     background-color: rgb(235, 239, 255);
 }
 
-.card-img-top {
-    padding-bottom: 5%;
-}
-
-.image-container {
-    position: relative;
-}
-
-/*index.html*/
 .banner{
     height: 500px;
     background: url(../images/western.jpg) no-repeat center center/cover;
@@ -95,19 +86,46 @@ nav a{
     display: inline;
 }
 
+.image-container {
+    position: relative;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.film-img{
+    max-height: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-img-top {
+    padding-bottom: 5%;
+}
+
+.film-cat{
+    height: 550px;
+}
+
 .post-link {
     text-decoration: none;
     color: #181c31;
+}
+
+.post-link p, .synopsis{
+    max-height: 150px;
+    overflow: auto;
 }
 
 .post-link:hover {
     color: #ffad60;
 }
 
-/*pagination*/
-.page-link {
-    background-color: #181c31;
-    color: #ffffff;
+.year {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 .image-flash {
@@ -117,16 +135,15 @@ nav a{
     background-color: #ffad60;
 }
 
-.year {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
 .card {
     background-color: white;
 }
 
+/*pagination*/
+.page-link {
+    background-color: #181c31;
+    color: #ffffff;
+}
 
 /*film_detail*/
 .film-title{
