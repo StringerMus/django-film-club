@@ -159,6 +159,7 @@ nav a{
     color: white;
 }
 
+/*
 .film-card{
     z-index: 1;
 }
@@ -167,6 +168,7 @@ nav a{
     z-index: 2;
     margin-bottom: 12px;
 }
+*/
 
 .r-count{
     padding-top: 20px;
@@ -232,6 +234,12 @@ nav a{
     color: rgb(172, 175, 175);
 }
 
-.approval {
-    color: rgb(222, 146, 168);
+/*post_film*/
+.film-catlist{
+    padding-left: 50px;
+}
+
+.del-film{
+    position: relative;
+    float: right;
 }

@@ -73,7 +73,7 @@ def review_edit(request, slug, review_id):
 #delete reviews
 def review_delete(request, slug, review_id):
     """
-    view to review comment
+    view to delete review
     """
     queryset = Movie.objects.all()
     film = get_object_or_404(queryset, slug=slug)

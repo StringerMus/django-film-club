@@ -1,22 +1,20 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from django.utils.text import slugify
+from django.http import HttpResponseRedirect
 from film.models import Movie
 from .forms import FilmForm
 
 
-# Create your views here.
 class FilmList(generic.ListView):
-    queryset = Movie.objects.all()
+    model = Movie
     template_name = "post/post_film.html"
+    #This makes sure the context name is movie_list
+    context_object_name = "movie_list"
 
 
 def post_film(request):
     queryset = Movie.objects.all()
-    #film catlogue - bug - film list not appearing
-    #film = get_object_or_404(queryset)
-    #reviews = film.movies.all().order_by("-added_on")
 
     if request.method == "POST":
         film_form = FilmForm(request.POST, request.FILES)
@@ -28,14 +26,27 @@ def post_film(request):
             )
 
     film_form = FilmForm()
-    film = Movie.objects.all().order_by('-added_on').first()
+    movie_list = Movie.objects.all() #.order_by('-added_on').first()
 
     return render(
         request,
         "post/post_film.html",
         {
             "post": post_film,
-            #"catalogue" : catalogue,
             "film_form": film_form,
+            "movie_list": movie_list,
         },
     )
+
+
+#delete films
+def film_delete(request, slug, movie_id):
+
+    queryset = Movie.objects.all()
+    film = get_object_or_404(queryset, slug=slug)
+    movie = get_object_or_404(Movie, pk=movie_id)
+
+    movie.delete()
+    messages.add_message(request, messages.SUCCESS, 'Film deleted!')
+    
+    return HttpResponseRedirect(reverse('post_film', args=[slug]))
