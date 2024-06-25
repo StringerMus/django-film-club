@@ -22,7 +22,6 @@ def post_film(request):
         film_form = FilmForm(data=request.POST)
         if film_form.is_valid():
             film_form.save()
-            #film_form.slug = slugify(film_form.title) - slug not auto filling
             messages.add_message(
                 request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
