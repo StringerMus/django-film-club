@@ -1,4 +1,5 @@
 const editButtons = document.getElementsByClassName("btn-edit");
+const reviewTitle = document.getElementById("id_title");
 const reviewText = document.getElementById("id_content");
 const reviewForm = document.getElementById("reviewForm");
 const submitButton = document.getElementById("submitButton");
@@ -21,7 +22,11 @@ for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let reviewId = e.target.getAttribute("review_id");
     let reviewContent = document.getElementById(`review${reviewId}`).innerText;
+    let reviewTitleValue = document.getElementById(`title${reviewId}`).innerText;
+    
+    reviewTitle.value = reviewTitleValue;
     reviewText.value = reviewContent;
+
     submitButton.innerText = "Update";
     reviewForm.setAttribute("action", `edit_review/${reviewId}`);
   });

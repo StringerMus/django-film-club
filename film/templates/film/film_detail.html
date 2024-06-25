@@ -30,8 +30,8 @@
         <!-- Loop through reviews -->
         {% for review in review %}
         <div class="p-2 reviews">
-          <div id="reivew{{ review.id }}">
-            <h3>{{ review.title }}</h3>
+          <h3 id="title{{ review.id }}">{{ review.title }}</h3>
+          <div id="review{{ review.id }}">
             {{ review.content | linebreaks }}
           </div>
           <h6>by {{ review.author }}</h6>
