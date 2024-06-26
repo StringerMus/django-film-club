@@ -40,13 +40,10 @@ def post_film(request):
 
 
 #delete films
-def film_delete(request, slug, movie_id):
-
-    queryset = Movie.objects.all()
-    film = get_object_or_404(queryset, slug=slug)
+def film_delete(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
 
     movie.delete()
     messages.add_message(request, messages.SUCCESS, 'Film deleted!')
     
-    return HttpResponseRedirect(reverse('post_film', args=[slug]))
+    return HttpResponseRedirect(reverse('post_film'))
