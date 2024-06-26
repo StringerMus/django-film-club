@@ -7,7 +7,6 @@ from .forms import ReviewForm
 from post.forms import FilmForm
 
 
-# Create your views here.
 class FilmList(generic.ListView):
     queryset = Movie.objects.all()
     template_name = "film/index.html"
@@ -86,14 +85,3 @@ def review_delete(request, slug, review_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own reviews!')
 
     return HttpResponseRedirect(reverse('film_detail', args=[slug]))
-
-
-#def add_movie(request):
-#    if request.method == 'POST':
-#        form = FilmForm(request.POST, request.FILES)
-#        if form.is_valid():
-#            form.save()
-#            return redirect('post_film.html')
-#    else:
-#        form = MovieForm()
-#    return render(request, 'post_film.html', {'form': form})

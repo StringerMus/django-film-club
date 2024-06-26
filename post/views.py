@@ -20,8 +20,7 @@ def post_film(request):
         film_form = FilmForm(request.POST, request.FILES)
         if film_form.is_valid():
             film_form.save()
-            messages.add_message(
-                request, messages.SUCCESS,
+            messages.add_message(request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
             )
 
@@ -46,4 +45,20 @@ def film_delete(request, movie_id):
     movie.delete()
     messages.add_message(request, messages.SUCCESS, 'Film deleted!')
     
+    return HttpResponseRedirect(reverse('post_film'))
+
+
+#edit films
+def review_edit(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+
+    if request.method == "POST":
+        film_form = FilmForm(data=request.POST, instance=movie)
+
+        if film_form.is_valid():
+            film_form.save()
+            messages.add_message(request, messages.SUCCESS, 'Film Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating film!')
+
     return HttpResponseRedirect(reverse('post_film'))
