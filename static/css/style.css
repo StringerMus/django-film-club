@@ -33,6 +33,10 @@ nav a{
     text-decoration: underline 2px solid #ffad60;
   }
 
+.alert-mes{
+    color: #ff004c;
+}
+
 /*footer*/
 .footer{
     background-color: #181c31;
@@ -61,11 +65,12 @@ nav a{
 }
 
 .banner h5{
-   padding: 1px 0 20px; 
+   padding: 3px 0 15px; 
 }
 
 .banner p{
-    padding-bottom: 15px; 
+    padding: 10px 0 15px;
+    font-size: 18px; 
  }
 
 .cover-text {
@@ -79,6 +84,10 @@ nav a{
 .cover-text h1 {
     font-family: "Paytone One";
     padding-bottom: 2%;
+}
+
+.tag{
+    font-family: "Playwrite NZ";
 }
 
 .film-button{
@@ -167,16 +176,10 @@ nav a{
     color: white;
 }
 
-/*
 .film-card{
-    z-index: 1;
+    height: 900px;
+    overflow: hidden;
 }
-
-.det-img{
-    z-index: 2;
-    margin-bottom: 12px;
-}
-*/
 
 .r-count{
     padding-top: 20px;
@@ -250,6 +253,7 @@ nav a{
 .del-film{
     position: relative;
     float: right;
+    margin-right: 10px;
 }
 
 .filmlist-img{

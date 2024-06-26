@@ -28,7 +28,7 @@
                 <span class="filmlist-img" id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
                 <span class="filmlist-img" id="director{{ movie.id }}">{{ movie.director }}</span>
                 <button class="btn btn-delete btn-sm del-film" data-movie-id="{{ movie.id }}">Delete</button>
-                <button class="btn btn-edit btn-sm edit-film" data-movie-id="{{ movie.id }}">Edit</button>
+                <button class="btn btn-edit btn-sm del-film" data-movie-id="{{ movie.id }}">Edit</button>
                 <span class="filmlist-img" id="synopsis{{ movie.id }}">{{ movie.synopsis | safe }}</span>
               </li>
             {% endfor %}
