@@ -49,11 +49,11 @@ def film_delete(request, movie_id):
 
 
 #edit films
-def review_edit(request, movie_id):
+def film_edit(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
 
     if request.method == "POST":
-        film_form = FilmForm(data=request.POST, instance=movie)
+        film_form = FilmForm(data=request.POST, files=request.FILES, instance=movie)
 
         if film_form.is_valid():
             film_form.save()

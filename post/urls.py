@@ -9,5 +9,5 @@ urlpatterns = [
     path("", post_film, name='post_film'),
     path('films/', views.FilmList.as_view(), name='film-list'),
     path('delete_movie/<int:movie_id>', views.film_delete, name='film_delete'),
-    path('edit_review/<int:review_id>', views.review_edit, name='film_edit'),
+    path('edit_film/<int:movie_id>', views.film_edit, name='film_edit'),
 ]

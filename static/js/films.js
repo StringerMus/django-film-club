@@ -5,7 +5,7 @@ const filmGenreInput = document.getElementById("id_genre");
 const filmImageInput = document.getElementById("id_featured_image");
 const filmSynopsisInput = document.getElementById("id_synopsis");
 const filmDirectorInput = document.getElementById("id_director");
-const reviewForm = document.getElementById("filmForm");
+const filmForm = document.getElementById("filmForm");
 const submitButton = document.getElementById("submitButton");
 
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
@@ -43,11 +43,10 @@ for (let button of editButtons) {
     filmTitleInput.value = filmTitle;
     filmYearInput.value = filmYear;
     filmGenreInput.value = filmGenre;
-    filmImageInput.value = filmImage;
     filmSynopsisInput.value = filmSynopsis;
     filmDirectorInput.value = filmDirector;
 
     submitButton.innerText = "Update";
-    reviewForm.setAttribute("action", `edit_film/${filmId}`);
+    filmForm.setAttribute("action", `edit_film/${filmId}`);
   });
 }

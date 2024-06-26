@@ -26,7 +26,7 @@
                   <span id="year{{ movie.id }}">{{ movie.year }}</span>
                   <span id="genre{{ movie.id }}">{{ movie.genre }}</span>
                   <span id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
-                  <span id="synopsis{{ movie.id }}">{{ movie.synopsis }}</span>
+                  <span id="synopsis{{ movie.id }}">{{ movie.synopsis | safe }}</span>
                   <span id="director{{ movie.id }}">{{ movie.director }}</span>
                   <button class="btn btn-delete btn-sm del-film" data-movie-id="{{ movie.id }}">Delete</button>
                   <button class="btn btn-edit btn-sm edit-film" data-movie-id="{{ movie.id }}">Edit</button>
