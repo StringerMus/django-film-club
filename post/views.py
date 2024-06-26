@@ -54,11 +54,22 @@ def film_edit(request, movie_id):
 
     if request.method == "POST":
         film_form = FilmForm(data=request.POST, files=request.FILES, instance=movie)
-
+        
         if film_form.is_valid():
             film_form.save()
-            messages.add_message(request, messages.SUCCESS, 'Film Updated!')
+            messages.add_message(request, messages.SUCCESS, 'Film updated!')
+            return HttpResponseRedirect(reverse('post_film'))
         else:
             messages.add_message(request, messages.ERROR, 'Error updating film!')
 
-    return HttpResponseRedirect(reverse('post_film'))
+    else:
+        film_form = FilmForm(instance=movie)
+
+    return render(
+        request,
+        "post/post_film.html",
+        {
+            "film_form": film_form,
+            "movie_list": Movie.objects.all(),
+        },
+    )

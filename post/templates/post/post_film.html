@@ -7,33 +7,33 @@
     <div class="row ml-auto">
         <!--New film form-->
         <div class="col-12 col-md-7 mt-2 mb-5">
-            <h2>Add a film</h2>
-            <p>Please fill in the form below to add a weekly film to the catalogue for members to review.</p>
-            <!-- form-->
-            <form id="filmForm" method="post" enctype='multipart/form-data'>
-                {{ film_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-md">Submit</button>
-            </form>
-        </div>
-        <!--Film catalogue-->
-        <div class="col-12 col-md-5 mt-5 mb-5 card-body film-catlist" style="width: 18rem;">
-            <h5 class="mt-3">Film Catalogue</h5>
-            <ul class="list-group list-group-flush">
-              {% for movie in movie_list %}
-                <li class="list-group-item" id="movie{{ movie.id }}">
-                  <span id="title{{ movie.id }}">{{ movie.title }}</span>
-                  <span id="year{{ movie.id }}">{{ movie.year }}</span>
-                  <span id="genre{{ movie.id }}">{{ movie.genre }}</span>
-                  <span id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
-                  <span id="synopsis{{ movie.id }}">{{ movie.synopsis | safe }}</span>
-                  <span id="director{{ movie.id }}">{{ movie.director }}</span>
-                  <button class="btn btn-delete btn-sm del-film" data-movie-id="{{ movie.id }}">Delete</button>
-                  <button class="btn btn-edit btn-sm edit-film" data-movie-id="{{ movie.id }}">Edit</button>
-                </li>
-              {% endfor %}
-            </ul>
-        </div>
+          <h2>Add a film</h2>
+          <p>Please fill in the form below to add a weekly film to the catalogue for members to review.</p>
+          <!-- form-->
+          <form id="filmForm" method="post" enctype='multipart/form-data'>
+              {{ film_form | crispy }}
+              {% csrf_token %}
+              <button type="submit" id="submitButton" class="btn btn-signup btn-md">Submit</button>
+          </form>
+      </div>
+      <!--Film catalogue-->
+      <div class="col-12 col-md-5 mt-5 mb-5 card-body film-catlist" style="width: 18rem;">
+          <h5 class="mt-3">Film Catalogue</h5>
+          <ul class="list-group list-group-flush">
+            {% for movie in movie_list %}
+              <li class="list-group-item" id="movie{{ movie.id }}">
+                <span id="title{{ movie.id }}">{{ movie.title }}</span>
+                <span id="year{{ movie.id }}">{{ movie.year }}</span>
+                <span id="genre{{ movie.id }}">{{ movie.genre }}</span>
+                <span id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
+                <span id="synopsis{{ movie.id }}">{{ movie.synopsis | safe }}</span>
+                <span id="director{{ movie.id }}">{{ movie.director }}</span>
+                <button class="btn btn-delete btn-sm del-film" data-movie-id="{{ movie.id }}">Delete</button>
+                <button class="btn btn-edit btn-sm edit-film" data-movie-id="{{ movie.id }}">Edit</button>
+              </li>
+            {% endfor %}
+          </ul>
+      </div>
     </div>
 </div>
 

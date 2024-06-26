@@ -251,3 +251,7 @@ nav a{
     position: relative;
     float: right;
 }
+
+.filmlist-img{
+    display: none;
+}
