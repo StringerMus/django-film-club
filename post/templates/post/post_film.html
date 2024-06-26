@@ -24,12 +24,12 @@
               <li class="list-group-item" id="movie{{ movie.id }}">
                 <span id="title{{ movie.id }}">{{ movie.title }}</span>
                 <span id="year{{ movie.id }}">{{ movie.year }}</span>
-                <span id="genre{{ movie.id }}">{{ movie.genre }}</span>
-                <span id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
-                <span id="synopsis{{ movie.id }}">{{ movie.synopsis | safe }}</span>
-                <span id="director{{ movie.id }}">{{ movie.director }}</span>
+                <span class="filmlist-img" id="genre{{ movie.id }}">{{ movie.genre }}</span>
+                <span class="filmlist-img" id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
+                <span class="filmlist-img" id="director{{ movie.id }}">{{ movie.director }}</span>
                 <button class="btn btn-delete btn-sm del-film" data-movie-id="{{ movie.id }}">Delete</button>
                 <button class="btn btn-edit btn-sm edit-film" data-movie-id="{{ movie.id }}">Edit</button>
+                <span class="filmlist-img" id="synopsis{{ movie.id }}">{{ movie.synopsis | safe }}</span>
               </li>
             {% endfor %}
           </ul>
