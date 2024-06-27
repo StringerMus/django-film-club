@@ -5,6 +5,7 @@ from .forms import ReviewForm
 class TestReviewForm(TestCase):
 
     def test_form_is_valid(self):
+        """ Test all fields"""
         review_form = ReviewForm({
             'title': 'Snap',
             'content': 'Good film'
@@ -14,6 +15,7 @@ class TestReviewForm(TestCase):
 
 
     def test_form_is_invalid(self):
+        """ Test title field"""
         review_form = ReviewForm({
             'title': '',
             'content': 'Good film'
@@ -23,6 +25,7 @@ class TestReviewForm(TestCase):
 
 
     def test_form_is_invalid(self):
+        """ Test content field"""
         review_form = ReviewForm({
             'title': 'Snap',
             'content': ''
@@ -32,6 +35,7 @@ class TestReviewForm(TestCase):
 
 
     def test_form_is_invalid(self):
+        """ Test all null fields"""
         review_form = ReviewForm({
             'title': '',
             'content': ''
