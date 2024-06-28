@@ -34,8 +34,11 @@ class TestFilmViews(TestCase):
         response = self.client.get(reverse(
             'film_detail', args=['film-title']))
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Review title", response.content)
-        self.assertIn(b"Review content", response.content)
+        self.assertIn(b"Film title", response.content)
+        self.assertIn(b"2024", response.content)
+        self.assertIn(b"action", response.content)
+        self.assertIn(b"Film about", response.content)
+        self.assertIn(b"John Doe", response.content)
+        self.assertIn(b"2024-06-01T09:43:19.754Z", response.content)
         self.assertIsInstance(
             response.context['review_form'], ReviewForm)
-            

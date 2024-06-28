@@ -21,7 +21,7 @@
           <h5 class="mt-3">Film Catalogue</h5>
           <ul class="list-group list-group-flush">
             {% for movie in movie_list %}
-              <li class="list-group-item" id="movie{{ movie.id }}">
+              <li class="list-group-item filmlistdis" id="movie{{ movie.id }}">
                 <span id="title{{ movie.id }}">{{ movie.title }}</span>
                 <span id="year{{ movie.id }}">{{ movie.year }}</span>
                 <span class="filmlist-img" id="genre{{ movie.id }}">{{ movie.genre }}</span>

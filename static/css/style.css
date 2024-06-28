@@ -260,3 +260,22 @@ nav a{
 .filmlist-img{
     display: none;
 }
+
+/*Large devices ( laptops and desktops 992px and up)*/
+@media screen and (min-width:992px) {
+    .footer{
+        font-size: 1.5vw;
+    }
+
+    .social{
+        font-size: 2.5vw;
+    }
+
+    .banner p{
+        font-size: 1.5vw; 
+    }
+
+     .cover-text {
+        font-size:1.1vw;
+    }
+}

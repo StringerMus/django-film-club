@@ -24,43 +24,55 @@ nav a{
 }
 
 .sign-mes{
-    position: absolute;
     display: flex;
-    color: white;
-    align-items: right;
+    flex-direction: row-reverse;
+    color: #ffad60;
 }
 
 .active {
     text-decoration: underline 2px solid #ffad60;
   }
 
-/*footer*/
-.dark-bg {
-    background-color: #ffad60;
+.alert-mes{
+    color: #188181;
+    font-weight:bolder;
 }
 
-/*main bg*/
+/*footer*/
+.footer{
+    background-color: #181c31;
+    color:#ffad60;
+    font-size: 15px;
+}
+
+.social{
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+/*index.html*/
 .main-bg {
     background-color: rgb(235, 239, 255);
 }
 
-.card-img-top {
-    padding-bottom: 5%;
-}
-
-.image-container {
-    position: relative;
-}
-
-/*index.html*/
 .banner{
     height: 500px;
     background: url(../images/western.jpg) no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 6%;
     align-items: center;
 }
+
+.banner h5{
+   padding: 3px 0 15px; 
+}
+
+.banner p{
+    padding: 10px 0 15px;
+    font-size: 18px; 
+ }
 
 .cover-text {
     text-align: center;
@@ -75,15 +87,43 @@ nav a{
     padding-bottom: 2%;
 }
 
+.tag{
+    font-family: "Playwrite NZ";
+}
+
 .film-button{
     text-decoration: none;
     color: white;
 }
 
 .film-button p{
-    padding: 1px 1px 1px;
-    margin: 3px 1px 3px;
+    margin-top: 5px;
+    padding: 6px;
     background-color: #ff004c;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.356);
+    display: inline;
+}
+
+.image-container {
+    position: relative;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.film-img{
+    max-height: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-img-top {
+    padding-bottom: 5%;
+}
+
+.film-cat{
+    height: 550px;
 }
 
 .post-link {
@@ -91,13 +131,19 @@ nav a{
     color: #181c31;
 }
 
+.post-link p, .synopsis{
+    max-height: 150px;
+    overflow: auto;
+}
+
 .post-link:hover {
     color: #ffad60;
 }
 
-.page-link {
-    background-color: #181c31;
-    color: #ffffff;
+.year {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 .image-flash {
@@ -107,29 +153,54 @@ nav a{
     background-color: #ffad60;
 }
 
-.year {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+.card {
+    background-color: white;
+}
+
+/*pagination*/
+.page-link {
+    background-color: #181c31;
+    color: #ffffff;
 }
 
 /*film_detail*/
-.card {
-    background-color: red;
+.film-title{
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: bold;
 }
 
-.post-subtitle{
-    background-color: red;
-}
-
-.card-text {
+.film-subtitle{
+    display: inline;
     background-color: #ffad60;
+    margin-top: 5px;
+    padding: 0 8px 0;
+    color: white;
 }
 
-.synopsis{
-    color: red;
+.film-card{
+    height: 900px;
+    overflow: hidden;
 }
 
+.r-count{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.review-card{
+    padding-left: 20px;
+}
+
+.new-rev{
+    background-color: #181c31;
+    color: white
+}
+
+.new-rev h4{
+    color: #ffad60
+}
+
+/*signup page*/
 .btn-signup,
 .btn-edit {
     background-color: #188181;
@@ -161,7 +232,7 @@ nav a{
 
 .btn-delete {
     color: #fff;
-    background: #ffc343;
+    background: red;
 }
 
 .btn-like:hover,
@@ -175,6 +246,17 @@ nav a{
     color: rgb(172, 175, 175);
 }
 
-.approval {
-    color: rgb(222, 146, 168);
+/*post_film*/
+.film-catlist{
+    padding-left: 50px;
+}
+
+.del-film{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+
+.filmlist-img{
+    display: none;
 }
