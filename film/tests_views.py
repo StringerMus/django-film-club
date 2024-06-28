@@ -23,7 +23,7 @@ class TestFilmViews(TestCase):
                         )
         self.film.save()
 
-    #film details - should be film review form details?
+
     def test_render_film_detail_page_with_review_form(self):
         response = self.client.get(reverse(
             'film_detail', args=['film-title']))
