@@ -111,12 +111,6 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
 }
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('dsuleoqxf'),
-    'API_KEY': os.environ.get('576418741517992'),
-    'API_SECRET': os.environ.get('7r-kvYC7Uz2n2Js9SI2Tllau8dg'),
-}
-
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 if 'test' in sys.argv:
