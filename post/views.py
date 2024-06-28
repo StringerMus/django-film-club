@@ -23,9 +23,14 @@ def post_film(request):
             messages.add_message(request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
             )
+            return HttpResponseRedirect(reverse('post_film'))
+        else:
+            messages.add_message(request, messages.ERROR, 'Error adding film! Please check the form for errors.')
+    else:
+        film_form = FilmForm()
 
-    film_form = FilmForm()
-    movie_list = Movie.objects.all() #.order_by('-added_on').first()
+    #film_form = FilmForm()
+    movie_list = Movie.objects.all()
 
     return render(
         request,

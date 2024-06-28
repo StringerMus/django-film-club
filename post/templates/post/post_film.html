@@ -11,6 +11,7 @@
           <p>Please fill in the form below to add a weekly film to the catalogue for members to review.</p>
           <!-- form-->
           <form id="filmForm" method="post" enctype='multipart/form-data'>
+              {{ film_form.non_field_errors }}
               {{ film_form | crispy }}
               {% csrf_token %}
               <button type="submit" id="submitButton" class="btn btn-signup btn-md">Submit</button>
