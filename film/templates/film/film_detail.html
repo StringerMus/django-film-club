@@ -28,15 +28,16 @@
       </strong>
       <!-- Display Reviews -->
       <h4>Reviews:</h4>
-      <div class="card-body">
+      <div class="card-body ">
         <!-- Loop through reviews -->
         {% for review in review %}
-        <div class="p-2 reviews">
+        <div class="p-2 reviews mb-5">
           <h3 id="title{{ review.id }}">{{ review.title }}</h3>
           <div id="review{{ review.id }}">
-            {{ review.content | linebreaks }}
+            {{ review.content | safe }}
           </div>
-          <h6>by {{ review.author }}</h6>
+          <br>
+          <h5>by {{ review.author }}</h5>
           {{ review.created_on }}
           <!--delete & edit reviews-->
           {% if user.is_authenticated and review.author == user %}

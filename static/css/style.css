@@ -54,6 +54,7 @@ nav a{
 /*index.html*/
 .main-bg {
     background-color: rgb(235, 239, 255);
+    min-height: 80vh;
 }
 
 .banner{
@@ -248,12 +249,11 @@ nav a{
 
 /*post_film*/
 .film-catlist{
-    padding-left: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .del-film{
-    position: relative;
-    float: right;
     margin-right: 10px;
 }
 
@@ -261,21 +261,16 @@ nav a{
     display: none;
 }
 
-/*Large devices ( laptops and desktops 992px and up)*/
-@media screen and (min-width:992px) {
-    .footer{
-        font-size: 1.5vw;
+@media screen and (min-width:768px) {
+    .film-catlist{
+        padding-left: 20px;
+        padding-right: 20px;
     }
+}
 
-    .social{
-        font-size: 2.5vw;
-    }
-
-    .banner p{
-        font-size: 1.5vw; 
-    }
-
-     .cover-text {
-        font-size:1.1vw;
+@media screen and (min-width:1024px) {
+    .film-catlist{
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
