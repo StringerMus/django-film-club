@@ -112,9 +112,9 @@ DATABASES = {
 }
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
-    'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET': os.environ.get('API_SECRET'),
+    'CLOUD_NAME': os.environ.get('dsuleoqxf'),
+    'API_KEY': os.environ.get('576418741517992'),
+    'API_SECRET': os.environ.get('7r-kvYC7Uz2n2Js9SI2Tllau8dg'),
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
