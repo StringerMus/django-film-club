@@ -31,8 +31,11 @@ def film_detail(request, slug):
                 request, messages.SUCCESS,
                 'Review submitted.'
             )
-
-    review_form = ReviewForm()
+            return HttpResponseRedirect(reverse('film_detail', args=[slug]))
+        else:
+            messages.add_message(request, messages.ERROR, 'Error submitting review! Please check the form for errors.')
+    else:
+        review_form = ReviewForm()
 
     return render(
         request,
