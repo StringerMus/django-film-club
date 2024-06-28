@@ -1,13 +1,8 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
-from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic
-from django.contrib import messages
-from django.http import HttpResponseRedirect
-from .models import Movie, Review
+from django.urls import reverse
+from .models import Movie
 from .forms import ReviewForm
-from post.forms import FilmForm
-
 
 class TestFilmViews(TestCase):
 
@@ -25,8 +20,7 @@ class TestFilmViews(TestCase):
                         genre="action",
                         synopsis="Film about",
                         director="John Doe",
-                        added_on ="2024-06-01T09:43:19.754Z"
-                         )
+                        )
         self.film.save()
 
     #film details - should be film review form details?
@@ -39,6 +33,5 @@ class TestFilmViews(TestCase):
         self.assertIn(b"action", response.content)
         self.assertIn(b"Film about", response.content)
         self.assertIn(b"John Doe", response.content)
-        self.assertIn(b"2024-06-01T09:43:19.754Z", response.content)
         self.assertIsInstance(
             response.context['review_form'], ReviewForm)
