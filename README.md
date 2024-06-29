@@ -205,8 +205,8 @@ this now fixed by adding a min value of 1000 and max value of 9999 in forms.py
 * Duplicate titles causes page error
 Now fixed to not allow addition of films with an existing title.
 
-* Lowercase titles in post film causes error
--	Same slug key causes error in post film – slug should not be based of title but id?
+* Lowercase titles in post film causes error - Same slug key causes error in post film if a new submission is posted in a different case to existing title entry.
+- This has now been fixed. The slugfield in model creates a unique slug id on submission and the title field in form is case insensitive if the title already exists.
 
 
 ## Lessons Learned
