@@ -94,7 +94,7 @@ A user will be introduced to the website with a hero image and a welcome messsag
 
 The nav bar on the homepage wireframe is what it will look like for a user that has not logged in. The homepage and logo will always take the user to the homepage, the 'films' link will take a user to the bottom to the catalogue. The links to register and login will give users the option to create an account or login if the user has an account already.
 
-![Homepage wireframe](media/skeleton_pl/homepage wireframe.JPG)
+![homepage_wire](media/skeleton_pl/homepage wireframe.JPG)
 
 
 ### Film Details
@@ -102,7 +102,7 @@ The page will hold film information and image. Below this will display the revie
 
 The nav is what will look like for a logged in user, the option for logout is present instead of 'login' and 'register'.
 
-![Homepage wireframe](media/skeleton_pl/film_detail wireframe.JPG)
+![film_detail_wireframe](media/skeleton_pl/film_detail wireframe.JPG)
 
 
 ### Post Film
@@ -110,7 +110,7 @@ This page will only be available for an admin user. This can be seen on the navb
 
 This page is where a new film can be added by filling out the form. This page will also contain a list of films on the website, delete and edit buttons can be added here for admins to either delete or edit the entries.
 
-![Homepage wireframe](media/skeleton_pl/post_film wireframe.JPG)
+![post_wire](media/skeleton_pl/post_film wireframe.JPG)
 
 
 ## Surface Plane
@@ -141,18 +141,43 @@ The tagline is Playwrite NZ - the tagline needed to standout and is quote from t
 ## Features
 
 ### Navbar
+The options on the navbar will appear differently depending on whether a user is logged in, an admin logged in and logged out.
+
+The navbar will also show the log in status on the right of the nav.
+
 #### Not logged in
+When a user is not logged in the nav will give the option to the user to register an account or log in to an existing account. The 'film' link take the user to the film section of the homepage for easy navigation if a user is not on the homepage.
+
+![navbar](media/features/navbar_login.JPG)
+
+
 #### User login
+When a user is logged in the user will have the options to navigate to Home, the films section on home or logout.
+
+![navbar_user](media/features/navbar-user_login.JPG)
+
+
 #### Admin login
+On admin login, the admin will have the option to access the Posts page where films can be added, edited or deleted on the catalogue.
+
+![navbar_user](media/features/navbar-admin_login.JPG)
+
 
 ### Footer
+The footer has the name of the website and underneath that would be social media links to the sites socials.
+
 
 ### Homepage
 #### Banner
+A user will be met with the hero image, taglne and welcome message. There is a button as an anchor tag which directs a user to the film section to the bottom of the page in case a user does not know how to navigate to the film catalogue.
+
 #### Catalogue
+This section will list films in order of date added for user to select which they want to click into for a more detailed view, find reviews or post their own reviews. The section will list 3 films at a time and will paginate if there are more than 3.
 
 ### Film details
 #### Film
+
+
 #### Reviews
 #### Post reviews
 #### Edit and delete reviews
@@ -165,6 +190,12 @@ The tagline is Playwrite NZ - the tagline needed to standout and is quote from t
 #### Login
 #### Register
 #### Logout
+
+
+## Testing
+
+
+## Bugs and Fixes
 
 ## Lessons Learned
 Not enough user stories
