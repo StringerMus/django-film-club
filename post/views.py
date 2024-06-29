@@ -13,8 +13,6 @@ class FilmList(generic.ListView):
 
 
 def post_film(request):
-    queryset = Movie.objects.all()
-
     if request.method == "POST":
         film_form = FilmForm(request.POST, request.FILES)
         if film_form.is_valid():
@@ -22,15 +20,20 @@ def post_film(request):
             messages.add_message(request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
             )
+            return HttpResponseRedirect(reverse('post_film'))
+        else:
+            for error in film_form.errors.values():
+                messages.add_message(request, messages.ERROR, error)
+    else:
+        film_form = FilmForm()
 
-    film_form = FilmForm()
-    movie_list = Movie.objects.all() #.order_by('-added_on').first()
+    movie_list = Movie.objects.all()
 
     return render(
         request,
         "post/post_film.html",
         {
-            "post": post_film,
+            #"post": post_film,
             "film_form": film_form,
             "movie_list": movie_list,
         },
@@ -48,7 +51,8 @@ def film_edit(request, movie_id):
             messages.add_message(request, messages.SUCCESS, 'Film updated!')
             return HttpResponseRedirect(reverse('post_film'))
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating film!')
+            for error in film_form.errors.values():
+                messages.add_message(request, messages.ERROR, error)
     else:
         film_form = FilmForm(instance=movie)
 
