@@ -208,6 +208,16 @@ Now fixed to not allow addition of films with an existing title.
 * Lowercase titles in post film causes error - Same slug key causes error in post film if a new submission is posted in a different case to existing title entry.
 - This has now been fixed. The slugfield in model creates a unique slug id on submission and the title field in form is case insensitive if the title already exists.
 
+### Currently field 
+* This field appears under the Image if a error is notified - fixed by adding the class in css to 'display:none;' as theire that appears with the field in html.
+
+### Time
+* The times that are being recorded next to each post is 1 hour behind. This has now been fixed by adding GB in the settings timezone.
+
+
+
+
+
 
 ## Lessons Learned
 Not enough user stories

@@ -54,7 +54,7 @@ nav a{
 /*index.html*/
 .main-bg {
     background-color: rgb(235, 239, 255);
-    min-height: 80vh;
+    min-height: 85vh;
 }
 
 .banner{
@@ -258,6 +258,11 @@ nav a{
 }
 
 .filmlist-img{
+    display: none;
+}
+
+/*hide currently field that appears in image field*/
+.input-group{
     display: none;
 }
 
