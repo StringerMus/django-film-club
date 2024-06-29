@@ -25,7 +25,7 @@ A plan is needed to ensure the purpose of the website meets the needs of site us
 The target audience can be wide for movie watchers but as this is a digital review platform the audience will have to be competant in using technology but also interested in spending time on movie review forums.
 
 * 18 - 35 year olds
-* Film enthusiasts of variety of genres.
+* Film enthusiasts.
 
 ### User Stories
 
@@ -114,14 +114,57 @@ This page is where a new film can be added by filling out the form. This page wi
 
 
 ## Surface Plane
+### Colour theme
+The site has light and dark colours, dark borders and light in the centre.
 
+As this is a review website and the activity on the website is reading, it is easier to read dark text on light background. To seperate sections and border page, dark colour was used for simple seperation and to highlight sections when needed.
 
-### Colour theme and design
+Shades of blue and yellow have been used as the primary colours for the websote - Trust is represented in the colour blue and yellow gives a good contrast against the blue to standout and compliment it.
 
+* Navy blue #181c31
+* Light blue ##ebefff
+* Yellow #ffad60;
+
+### Type
+Only 3 different font have been used;
+* Paytone One
+* Hind Madurai
+* Playwrite NZ
+
+Paytone has been used for the logo and the welcome, the font is bold, has a touch of flair and looks soft so gives the website a feeling of playfulness.
+
+The text font is Hind Madurai has been used as main body of the font - looks it looks very standard but slightly different to other standard fonts.
+
+The tagline is Playwrite NZ - the tagline needed to standout and is quote from the film 'Django Unchained'.
 
 
 ## Features
 
+### Navbar
+#### Not logged in
+#### User login
+#### Admin login
+
+### Footer
+
+### Homepage
+#### Banner
+#### Catalogue
+
+### Film details
+#### Film
+#### Reviews
+#### Post reviews
+#### Edit and delete reviews
+
+### Post films
+#### Add a film
+#### Film Catalogue
+
+### Login/ Register
+#### Login
+#### Register
+#### Logout
 
 ## Lessons Learned
 Not enough user stories
