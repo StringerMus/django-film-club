@@ -55,6 +55,18 @@
         {% if user.is_authenticated %}
         <h4>Post your review on the film:</h4>
         <p>Posting as: {{ user.username }}</p>
+
+        <!-- Display messages -->
+        {% if messages %}
+        <div>
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
         <form id="reviewForm" method="POST" style="margin-top: 1.3em;">
           {{ review_form | crispy }}
           {% csrf_token %}

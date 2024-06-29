@@ -21,7 +21,7 @@ def film_detail(request, slug):
     review_count = film.reviews.filter().count()
 
     if request.method == "POST":
-        review_form = ReviewForm(data=request.POST)
+        review_form = ReviewForm(data=request.POST, film=film)
         if review_form.is_valid():
             review = review_form.save(commit=False)
             review.author = request.user
@@ -31,8 +31,12 @@ def film_detail(request, slug):
                 request, messages.SUCCESS,
                 'Review submitted.'
             )
-
-    review_form = ReviewForm()
+            return HttpResponseRedirect(reverse('film_detail', args=[slug]))
+        else:
+            for error in review_form.errors.values():
+                messages.add_message(request, messages.ERROR, error)
+    else:
+        review_form = ReviewForm(film=film)
 
     return render(
         request,
