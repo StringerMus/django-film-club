@@ -196,6 +196,18 @@ This section will list films in order of date added for user to select which the
 
 
 ## Bugs and Fixes
+### Post form
+#### Year field – need to add restrictions
+* Year can have less and more than 4 figures
+this now fixed by adding a min value of 1000 and max value of 9999 in forms.py
+
+### Title field – Invalid input of duplicate titles - fixed
+* Duplicate titles causes page error
+Now fixed to not allow addition of films with an existing title.
+
+* Lowercase titles in post film causes error
+-	Same slug key causes error in post film – slug should not be based of title but id?
+
 
 ## Lessons Learned
 Not enough user stories

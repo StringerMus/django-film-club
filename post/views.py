@@ -33,7 +33,6 @@ def post_film(request):
         request,
         "post/post_film.html",
         {
-            #"post": post_film,
             "film_form": film_form,
             "movie_list": movie_list,
         },

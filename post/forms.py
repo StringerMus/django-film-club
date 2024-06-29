@@ -3,6 +3,15 @@ from django import forms
 
 
 class FilmForm(forms.ModelForm):
+    year = forms.IntegerField(
+        min_value=1000,
+        max_value=9999,
+        error_messages={
+            'min_value': 'Year must be a four-digit number.',
+            'max_value': 'Year must be a four-digit number.'
+        }
+    )
+
     class Meta:
         model = Movie
         fields = ('title', 'year', 'genre', 'featured_image', 'synopsis', 'director',)
@@ -13,6 +22,6 @@ class FilmForm(forms.ModelForm):
 
     def clean_title(self):
         title = self.cleaned_data.get('title')
-        if Movie.objects.filter(title=title).exclude(id=self.instance.id).exists():
+        if Movie.objects.filter(title__iexact=title).exclude(id=self.instance.id).exists():
             raise forms.ValidationError("A film with this title already exists.")
         return title

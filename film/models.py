@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 import datetime
+import uuid
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -23,7 +24,7 @@ GENRE_CHOICES = (
 # Create your models here.
 class Movie(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, default=uuid.uuid4, editable=False)
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
     genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
     featured_image = CloudinaryField('image', default='placeholder')
