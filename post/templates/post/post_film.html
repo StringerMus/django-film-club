@@ -11,7 +11,6 @@
           <p>Please fill in the form below to add a weekly film to the catalogue for members to review.</p>
           <!-- form-->
           <form id="filmForm" method="post" enctype='multipart/form-data'>
-              {{ film_form.non_field_errors }}
               {{ film_form | crispy }}
               {% csrf_token %}
               <button type="submit" id="submitButton" class="btn btn-signup btn-md">Submit</button>
@@ -25,7 +24,7 @@
               <li class="list-group-item filmlistdis" id="movie{{ movie.id }}">
                 <span id="title{{ movie.id }}">{{ movie.title }}</span>
                 <span id="year{{ movie.id }}">{{ movie.year }}</span>
-                <span class="filmlist-img" id="genre{{ movie.id }}">| {{ movie.genre }}</span>
+                <span class="filmlist-img" id="genre{{ movie.id }}">{{ movie.genre }}</span>
                 <span class="filmlist-img" id="featured_image{{ movie.id }}">{{ movie.featured_image.url }}</span>
                 <span class="filmlist-img" id="director{{ movie.id }}">{{ movie.director }}</span>
                 <br>

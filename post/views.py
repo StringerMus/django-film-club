@@ -9,7 +9,6 @@ from .forms import FilmForm
 class FilmList(generic.ListView):
     model = Movie
     template_name = "post/post_film.html"
-    #This makes sure the context name is movie_list
     context_object_name = "movie_list"
 
 
@@ -23,14 +22,9 @@ def post_film(request):
             messages.add_message(request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
             )
-            return HttpResponseRedirect(reverse('post_film'))
-        else:
-            messages.add_message(request, messages.ERROR, 'Error adding film! Please check the form for errors.')
-    else:
-        film_form = FilmForm()
 
-    #film_form = FilmForm()
-    movie_list = Movie.objects.all()
+    film_form = FilmForm()
+    movie_list = Movie.objects.all() #.order_by('-added_on').first()
 
     return render(
         request,
@@ -41,17 +35,6 @@ def post_film(request):
             "movie_list": movie_list,
         },
     )
-
-
-#delete films
-def film_delete(request, movie_id):
-    movie = get_object_or_404(Movie, pk=movie_id)
-
-    movie.delete()
-    messages.add_message(request, messages.SUCCESS, 'Film deleted!')
-    
-    return HttpResponseRedirect(reverse('post_film'))
-
 
 #edit films
 def film_edit(request, movie_id):
@@ -66,7 +49,6 @@ def film_edit(request, movie_id):
             return HttpResponseRedirect(reverse('post_film'))
         else:
             messages.add_message(request, messages.ERROR, 'Error updating film!')
-
     else:
         film_form = FilmForm(instance=movie)
 
@@ -78,3 +60,12 @@ def film_edit(request, movie_id):
             "movie_list": Movie.objects.all(),
         },
     )
+
+#delete films
+def film_delete(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+
+    movie.delete()
+    messages.add_message(request, messages.SUCCESS, 'Film deleted!')
+    
+    return HttpResponseRedirect(reverse('post_film'))
