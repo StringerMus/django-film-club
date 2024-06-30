@@ -33,7 +33,6 @@ class Movie(models.Model):
     added_on = models.DateTimeField(auto_now_add=True)
 
     # Generate the slug based on title and id
-    # Limits to 50 characters for safety
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)[:50]

@@ -218,6 +218,13 @@ To register to the site is quite simple, the user will need to create a username
 #### Logout
 The function of logout page is to allow users to logout of the sign and the page confirms this with the user.
 
+#### Responsiveness
+The website has been developed to bit for the following screen sizes;
+* 320px
+* 768px
+* 1024px
+* 1400px
+
 
 ## Testing
 ### Automated Testing
@@ -328,33 +335,23 @@ After testing the changing the title entry to the existing film 'Joker' I test e
 
 ![film](test_film6)
 
-#### CRUD Functionality
+To delete a film entry I can delete a film by clicking the delete button underneath a film in the posts page. This brings up the delete confirmation modal. After clicking yes this deletes the film entry permenantly and any reviews under it if there were any.
 
-##### Review Form
-
-##### Film Form
+![film](test_film7)
 
 
 
+## Code Validation
 
-#### Responsiveness
-iPhone SE
-Pixel 5
-Samsung Galaxy S8, S20 Ultra
-iPad Air and Mini
-Galaxy Fold
-Nest Hub and Hub Max
+### HTML W3C
 
-320px
-768px
-992px
-1400px
-
-#### Compatibility
-Google Chrome, Mozilla Firefox and Microsoft Edge
+### CSS W3C
+### Javascript JSHint
+### Python PEP8
+### Lighthouse
 
 
-### Validation testing
+
 
 ## Bugs and Fixes
 ### Post form
@@ -380,13 +377,15 @@ Now fixed to not allow addition of films with an existing title.
 The field will allow a user to type '.' and 'e'. I have tried solving this with adding the 'min' and 'max' values in the form but this still does not seem to work. I have tried trouble shooting online but could not have a solution for it.
 
 However bugs will not appear when the form is submitted;
-* Can submit with ‘.’ But the ‘.’. The form does not seem to recognise the value as does not appear on the films details. 
-* Can type ‘e’ but will not allow admin to submit and highlight the error in the field.
+* Can submit with ‘.’ But the form does not seem to recognise the value as does not appear on the films details. 
+* Can type ‘e’ but will not allow admin to submit and highlights the error in the field for admin to correct.
 
 
-
-
-
+## Deployment
 
 ## Lessons Learned
 Not enough user stories
+
+## Technologies Used
+
+## Credits

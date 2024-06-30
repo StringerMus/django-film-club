@@ -13,7 +13,7 @@ class FilmList(generic.ListView):
     paginate_by = 3
 
 
-#post reviews
+# Post reviews
 def film_detail(request, slug):
     queryset = Movie.objects.all()
     film = get_object_or_404(queryset, slug=slug)
@@ -50,7 +50,7 @@ def film_detail(request, slug):
     )
 
 
-#edit reviews
+# Edit reviews
 def review_edit(request, slug, review_id):
     """
     view to edit reviews
@@ -73,7 +73,7 @@ def review_edit(request, slug, review_id):
     return HttpResponseRedirect(reverse('film_detail', args=[slug]))
 
 
-#delete reviews
+# Delete reviews
 def review_delete(request, slug, review_id):
     """
     view to delete reviews
