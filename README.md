@@ -8,7 +8,7 @@ Films will forever be a visual medium for humans to tell stories, the role of th
 
 [Visit the Website Here](https://djangos-film-club-532a7f9d2300.herokuapp.com/)
 
-![Responsive Image]()
+![Responsive Image](media/responsive_web.JPG)
 
 ## UX - User Experience
 * Strategy Plane
@@ -207,9 +207,9 @@ To register to the site is quite simple, the user will need to create a username
 The function of logout page is to allow users to logout of the sign and the page confirms this with the user.
 
 
-
-
 ## Testing
+
+
 
 
 ## Bugs and Fixes
@@ -230,6 +230,14 @@ Now fixed to not allow addition of films with an existing title.
 
 ### Time
 * The times that are being recorded next to each post is 1 hour behind. This has now been fixed by adding GB in the settings timezone.
+
+### Unresolved bug
+#### The year field in Post film form
+The field will allow a user to type '.' and 'e'. I have tried solving this with adding the 'min' and 'max' values in the form but this still does not seem to work. I have tried trouble shooting online but could not have a solution for it.
+
+However bugs will not appear when the form is submitted;
+* Can submit with ‘.’ But the ‘.’. The form does not seem to recognise the value as does not appear on the films details. 
+* Can type ‘e’ but will not allow admin to submit and highlight the error in the field.
 
 
 
