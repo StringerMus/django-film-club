@@ -2,6 +2,7 @@ from django.test import TestCase
 from .forms import ReviewForm
 
 
+# Checks if forms valid if/not input correctly
 class TestReviewForm(TestCase):
 
     def test_form_is_valid(self):

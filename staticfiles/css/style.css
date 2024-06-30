@@ -54,6 +54,7 @@ nav a{
 /*index.html*/
 .main-bg {
     background-color: rgb(235, 239, 255);
+    min-height: 85vh;
 }
 
 .banner{
@@ -150,7 +151,7 @@ nav a{
     position: absolute;
     bottom: 10%;
     min-width: 30%;
-    background-color: #ffad60;
+    background-color: #ff004c;
 }
 
 .card {
@@ -171,10 +172,11 @@ nav a{
 
 .film-subtitle{
     display: inline;
-    background-color: #ffad60;
+    background-color: #ff004c;
     margin-top: 5px;
     padding: 0 8px 0;
     color: white;
+    text-transform: uppercase;
 }
 
 .film-card{
@@ -248,15 +250,33 @@ nav a{
 
 /*post_film*/
 .film-catlist{
-    padding-left: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .del-film{
-    position: relative;
-    float: right;
     margin-right: 10px;
 }
 
 .filmlist-img{
     display: none;
+}
+
+/*hide currently field that appears in image field*/
+.input-group{
+    display: none;
+}
+
+@media screen and (min-width:768px) {
+    .film-catlist{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .film-catlist{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }

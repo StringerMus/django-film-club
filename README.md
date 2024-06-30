@@ -208,8 +208,30 @@ The function of logout page is to allow users to logout of the sign and the page
 
 
 ## Testing
+### Automated Testing
+There are automated testing that have been completed for the reviews and films.
 
+#### Reviews
+##### Forms
+The test checks if forms functions correctly if input fields have been input correctly and if fields are missing. The tests pass ok.
 
+##### Views
+
+### Responsiveness
+iPhone SE
+Pixel 5
+Samsung Galaxy S8, S20 Ultra
+iPad Air and Mini
+Galaxy Fold
+Nest Hub and Hub Max
+
+320px
+768px
+992px
+1400px
+
+### Compatibility
+Google Chrome, Mozilla Firefox and Microsoft Edge
 
 
 ## Bugs and Fixes

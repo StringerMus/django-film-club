@@ -6,7 +6,7 @@ from .forms import ReviewForm
 
 class TestFilmViews(TestCase):
 
-    #create a user
+    #creates a user
     def setUp(self):
         self.user = User.objects.create_superuser(
             username="adminUser",
@@ -23,7 +23,7 @@ class TestFilmViews(TestCase):
                         )
         self.film.save()
 
-
+    #Checks if page and review form has been rendered correctly
     def test_render_film_detail_page_with_review_form(self):
         response = self.client.get(reverse(
             'film_detail', args=['film-title']))
