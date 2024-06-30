@@ -344,9 +344,8 @@ To delete a film entry I can delete a film by clicking the delete button underne
 ## Code Validation
 
 ### HTML W3C
-I have checked HTML validator, there were errors in the syntax for the base, post_film and register pages due to tags in json file, nav class and p tags
+I have checked HTML validator, there were errors in the syntax for the base, post_film and register pages due to 'p' tags within json file for synopsis and nav class having redundant boostrap classes.
 
-![htmlval]()
 
 
 These have been corrected and are no longer showing errors.
@@ -355,8 +354,6 @@ There are error when I paste the register page address in the validator but thes
 
 ### CSS W3C
 No errors found
-
-![cssval]()
 
 ### Javascript JSHint
 both revews.js and films.js no issues - undefined variable on jshint but if removed the modal does not work.
