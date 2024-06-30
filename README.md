@@ -119,11 +119,14 @@ The site has light and dark colours, dark borders and light in the centre.
 
 As this is a review website and the activity on the website is reading, it is easier to read dark text on light background. To seperate sections and border page, dark colour was used for simple seperation and to highlight sections when needed.
 
-Shades of blue and yellow have been used as the primary colours for the websote - Trust is represented in the colour blue and yellow gives a good contrast against the blue to standout and compliment it.
+Shades of blue and yellow have been used as the primary colours for the website - Trust is represented in the colour blue and yellow.
+
+Red has been used to highlight information as a small ribbon that may get lost on the site. This makes the information stand out and gives a good contrast against the white, blue and yellow.
 
 * Navy blue #181c31
 * Light blue ##ebefff
 * Yellow #ffad60;
+* Red #ff004c
 
 ### Type
 Only 3 different font have been used;
@@ -176,14 +179,17 @@ This section will list films in order of date added for user to select which the
 
 ### Film details
 #### Film
-
+When a film's title and synopsis is clicked on, this take the user to the film's details page. This expands contains the detail of the film, includes the director of the film.
 
 #### Reviews
-#### Post reviews
+Below the film image is the section for reviews which is split into reviews that have been posted by users on the left where visitors can read these, they appear in the order of latest and it lists down. On the right is where a logged in user can post their own reviews. They would need to fill the title of their review and the content. If a user is not logged in they will not be able to leave a review on the website.
+
 #### Edit and delete reviews
+Users will be able to edit or delete only their own reviews, these buttons will appear on their reviews.
 
 ### Post films
 #### Add a film
+
 #### Film Catalogue
 
 ### Login/ Register

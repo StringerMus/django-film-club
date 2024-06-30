@@ -151,7 +151,7 @@ nav a{
     position: absolute;
     bottom: 10%;
     min-width: 30%;
-    background-color: #ffad60;
+    background-color: #ff004c;
 }
 
 .card {
@@ -172,10 +172,11 @@ nav a{
 
 .film-subtitle{
     display: inline;
-    background-color: #ffad60;
+    background-color: #ff004c;
     margin-top: 5px;
     padding: 0 8px 0;
     color: white;
+    text-transform: uppercase;
 }
 
 .film-card{

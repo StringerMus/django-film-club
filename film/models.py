@@ -21,7 +21,7 @@ GENRE_CHOICES = (
     ('crime','CRIME'),
 )
 
-# Create your models here.
+
 class Movie(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, default=uuid.uuid4, editable=False)
@@ -32,10 +32,10 @@ class Movie(models.Model):
     director = models.CharField(max_length=200, unique=False)
     added_on = models.DateTimeField(auto_now_add=True)
 
+    # Generate the slug based on title and id
+    # Limits to 50 characters for safety
     def save(self, *args, **kwargs):
         if not self.slug:
-            # Generate the slug based on title and id
-            # Limit to 50 characters for safety
             self.slug = slugify(self.title)[:50]
             if self.id:
                 self.slug += '-' + str(self.id)
