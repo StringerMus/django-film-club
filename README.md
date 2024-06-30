@@ -344,9 +344,23 @@ To delete a film entry I can delete a film by clicking the delete button underne
 ## Code Validation
 
 ### HTML W3C
+I have checked HTML validator, there were errors in the syntax for the base, post_film and register pages due to tags in json file, nav class and p tags
+
+![htmlval]()
+
+
+These have been corrected and are no longer showing errors.
+
+There are error when I paste the register page address in the validator but these are not actually errors from the code, they are coming from Django forms interpretation of allauths helper text.
 
 ### CSS W3C
+No errors found
+
+![cssval]()
+
 ### Javascript JSHint
+films.js no issues - undefined variable on jshint but if removed the modal does not work.
+
 ### Python PEP8
 ### Lighthouse
 
