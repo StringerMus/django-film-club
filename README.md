@@ -346,8 +346,6 @@ To delete a film entry I can delete a film by clicking the delete button underne
 ### HTML W3C
 I have checked HTML validator, there were errors in the syntax for the base, post_film and register pages due to 'p' tags within json file for synopsis and nav class having redundant boostrap classes.
 
-
-
 These have been corrected and are no longer showing errors.
 
 There are error when I paste the register page address in the validator but these are not actually errors from the code, they are coming from Django forms interpretation of allauths helper text.
