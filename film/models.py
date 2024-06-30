@@ -24,7 +24,7 @@ GENRE_CHOICES = (
 
 class Movie(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, default=uuid.uuid4, editable=False)
+    slug = models.SlugField(max_length=200, unique=True, default=uuid.uuid4) #editable=False
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
     genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
     featured_image = CloudinaryField('image', default='placeholder')
