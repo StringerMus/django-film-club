@@ -188,14 +188,25 @@ Below the film image is the section for reviews which is split into reviews that
 Users will be able to edit or delete only their own reviews, these buttons will appear on their reviews.
 
 ### Post films
+This page is only accessible to admin users. The function of the page is the ability for admin to add films to the catalogue for users to be able to add reviews under.
+
 #### Add a film
+This section contains the form fields needed to add a film. If an image is not uploaded, a placeholder image will be supplied on the site until this is updated by the admin. The same title is not able to submitted on the site to avoid duplication of films being posted.
 
 #### Film Catalogue
+The catalogue of films will appear on the right of the form which contain the edit and delete button under each film. The edit will populate the form with the films detail for admin to change information if they wish.
 
 ### Login/ Register
 #### Login
+The login page requires the user to fill their username and password to be able to login, if a user does not have an existing account there is a link to the 'register' page. 
+
 #### Register
+To register to the site is quite simple, the user will need to create a username and password, the email is optional to provide. The password has a few simple requirements, if they are nor met an error is notifed.
+
 #### Logout
+The function of logout page is to allow users to logout of the sign and the page confirms this with the user.
+
+
 
 
 ## Testing
