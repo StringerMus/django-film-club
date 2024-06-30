@@ -3,6 +3,7 @@ from django.test import TestCase
 from .forms import FilmForm
 
 
+# Checks if forms valid if/not input correctly
 class TestFilmForm(TestCase):
 
     def test_form_is_valid(self):
@@ -42,19 +43,6 @@ class TestFilmForm(TestCase):
             'director': 'David Gold',
         })
         self.assertFalse(film_form.is_valid(), msg="Letters in year field - Form is valid")
-
-
-    def test_form_is_valid(self):
-        """ Test year field - letters are invalid"""
-        film_form = FilmForm({
-            'title': 'James Bond',
-            'year': '20204',
-            'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
-            'synopsis': 'Bond must find Gold Finger',
-            'director': 'David Gold',
-        })
-        self.assertTrue(film_form.is_valid(), msg="Letters in year field - Form is valid")
 
 
     def test_form_is_invalid(self):
@@ -118,4 +106,4 @@ class TestFilmForm(TestCase):
             'synopsis': 'Bond must find Gold Finger',
             'director': '',
         })
-        self.assertFalse(film_form.is_valid(), msg="Missing Genre - Form is valid")
+        self.assertFalse(film_form.is_valid(), msg="Missing director - Form is valid")
