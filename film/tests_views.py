@@ -4,6 +4,7 @@ from django.urls import reverse
 from .models import Movie
 from .forms import ReviewForm
 
+
 class TestFilmViews(TestCase):
 
     # Creates a user
@@ -14,13 +15,14 @@ class TestFilmViews(TestCase):
             email="admin@film.com"
         )
         # Film subject
-        self.film = Movie(title=" Film title",
-                        slug="film-title",
-                        year="2024",
-                        genre="action",
-                        synopsis="Film about",
-                        director="John Doe",
-                        )
+        self.film = Movie(
+            title=" Film title",
+            slug="film-title",
+            year="2024",
+            genre="action",
+            synopsis="Film about",
+            director="John Doe",
+            )
         self.film.save()
 
     # Checks if page and review form has been rendered correctly

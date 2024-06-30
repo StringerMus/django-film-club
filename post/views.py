@@ -17,7 +17,8 @@ def post_film(request):
         film_form = FilmForm(request.POST, request.FILES)
         if film_form.is_valid():
             film_form.save()
-            messages.add_message(request, messages.SUCCESS,
+            messages.add_message(
+                request, messages.SUCCESS,
                 'The film has been added to the film catalogue.'
             )
             return HttpResponseRedirect(reverse('post_film'))
@@ -38,13 +39,15 @@ def post_film(request):
         },
     )
 
-#edit films
+
+# Edit films
 def film_edit(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
 
     if request.method == "POST":
-        film_form = FilmForm(data=request.POST, files=request.FILES, instance=movie)
-        
+        film_form = FilmForm(
+            data=request.POST, files=request.FILES, instance=movie)
+
         if film_form.is_valid():
             film_form.save()
             messages.add_message(request, messages.SUCCESS, 'Film updated!')
@@ -64,11 +67,11 @@ def film_edit(request, movie_id):
         },
     )
 
-#delete films
+
+# Delete films
 def film_delete(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
 
     movie.delete()
     messages.add_message(request, messages.SUCCESS, 'Film deleted!')
-    
     return HttpResponseRedirect(reverse('post_film'))

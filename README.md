@@ -359,9 +359,11 @@ No errors found
 ![cssval]()
 
 ### Javascript JSHint
-films.js no issues - undefined variable on jshint but if removed the modal does not work.
+both revews.js and films.js no issues - undefined variable on jshint but if removed the modal does not work.
 
 ### Python PEP8
+All python files have been put through the CI Python Linter, there were had errors where regarding spacing, indentation line being too. These have now been resolved and no errors are being shown. 
+
 ### Lighthouse
 
 

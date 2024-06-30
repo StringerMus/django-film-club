@@ -12,12 +12,12 @@ class TestFilmForm(TestCase):
             'title': 'James Bond',
             'year': '2020',
             'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': 'Bond must find Gold Finger',
             'director': 'David Gold',
         })
         self.assertTrue(film_form.is_valid(), msg="Form is not valid")
-
 
     def test_form_is_invalid(self):
         """ Test title field"""
@@ -25,12 +25,13 @@ class TestFilmForm(TestCase):
             'title': '',
             'year': '2020',
             'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': 'Bond must find Gold Finger',
             'director': 'David Gold',
         })
-        self.assertFalse(film_form.is_valid(), msg="Missing title - Form is valid")
-
+        self.assertFalse(
+            film_form.is_valid(), msg="Missing title - Form is valid")
 
     def test_form_is_invalid(self):
         """ Test year field - letters are invalid"""
@@ -38,12 +39,13 @@ class TestFilmForm(TestCase):
             'title': 'James Bond',
             'year': 'abcd',
             'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': 'Bond must find Gold Finger',
             'director': 'David Gold',
         })
-        self.assertFalse(film_form.is_valid(), msg="Letters in year field - Form is valid")
-
+        self.assertFalse(
+            film_form.is_valid(), msg="Letters in year field - Form is valid")
 
     def test_form_is_invalid(self):
         """ Test year field"""
@@ -51,12 +53,13 @@ class TestFilmForm(TestCase):
             'title': 'James Bond',
             'year': '',
             'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': 'Bond must find Gold Finger',
             'director': 'David Gold',
         })
-        self.assertFalse(film_form.is_valid(), msg="Missing year - Form is valid")
-
+        self.assertFalse(
+            film_form.is_valid(), msg="Missing year - Form is valid")
 
     def test_form_is_invalid(self):
         """ Test year field"""
@@ -64,15 +67,19 @@ class TestFilmForm(TestCase):
             'title': 'James Bond',
             'year': '2020',
             'genre': '',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': 'Bond must find Gold Finger',
             'director': 'David Gold',
         })
-        self.assertFalse(film_form.is_valid(), msg="Missing genre - Form is valid")
-
+        self.assertFalse(
+            film_form.is_valid(), msg="Missing genre - Form is valid")
 
     def test_form_is_valid(self):
-        """ Test missing image field - missing image fields has placeholder images"""
+        """
+        Test missing image field,
+        missing image fields has placeholder images
+        """
         film_form = FilmForm({
             'title': 'James Bond',
             'year': '2020',
@@ -80,8 +87,8 @@ class TestFilmForm(TestCase):
             'synopsis': 'Bond must find Gold Finger',
             'director': 'David Gold',
         })
-        self.assertTrue(film_form.is_valid(), msg="Missing image - Form is invalid")
-
+        self.assertTrue(
+            film_form.is_valid(), msg="Missing image - Form is invalid")
 
     def test_form_is_invalid(self):
         """ Test synopsis field"""
@@ -89,12 +96,13 @@ class TestFilmForm(TestCase):
             'title': 'James Bond',
             'year': '2020',
             'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': '',
             'director': 'David Gold',
         })
-        self.assertFalse(film_form.is_valid(), msg="Missing synopsis - Form is valid")
-
+        self.assertFalse(
+            film_form.is_valid(), msg="Missing synopsis - Form is valid")
 
     def test_form_is_invalid(self):
         """ Test year field"""
@@ -102,8 +110,10 @@ class TestFilmForm(TestCase):
             'title': 'James Bond',
             'year': '2020',
             'genre': 'action',
-            'featured_image': SimpleUploadedFile(name='test_image.jpg', content=b'', content_type='image/jpeg'),
+            'featured_image': SimpleUploadedFile(
+                name='test_image.jpg', content=b'', content_type='image/jpeg'),
             'synopsis': 'Bond must find Gold Finger',
             'director': '',
         })
-        self.assertFalse(film_form.is_valid(), msg="Missing director - Form is valid")
+        self.assertFalse(
+            film_form.is_valid(), msg="Missing director - Form is valid")

@@ -14,7 +14,6 @@ class TestReviewForm(TestCase):
 
         self.assertTrue(review_form.is_valid(), msg='Form is invalid')
 
-
     def test_form_is_invalid(self):
         """ Test title field"""
         review_form = ReviewForm({
@@ -24,7 +23,6 @@ class TestReviewForm(TestCase):
 
         self.assertFalse(review_form.is_valid(), msg='Form is valid')
 
-
     def test_form_is_invalid(self):
         """ Test content field"""
         review_form = ReviewForm({
@@ -33,7 +31,6 @@ class TestReviewForm(TestCase):
             })
 
         self.assertFalse(review_form.is_valid(), msg='Form is valid')
-
 
     def test_form_is_invalid(self):
         """ Test all null fields"""

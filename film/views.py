@@ -68,7 +68,8 @@ def review_edit(request, slug, review_id):
             review.save()
             messages.add_message(request, messages.SUCCESS, 'Review Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating review!')
+            messages.add_message(
+                request, messages.ERROR, 'Error updating review!')
 
     return HttpResponseRedirect(reverse('film_detail', args=[slug]))
 
@@ -86,6 +87,7 @@ def review_delete(request, slug, review_id):
         review.delete()
         messages.add_message(request, messages.SUCCESS, 'Review deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own reviews!')
+        messages.add_message(
+            request, messages.ERROR, 'You can only delete your own reviews!')
 
     return HttpResponseRedirect(reverse('film_detail', args=[slug]))

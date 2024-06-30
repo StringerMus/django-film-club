@@ -8,25 +8,26 @@ import uuid
 STATUS = ((0, "Draft"), (1, "Published"))
 
 GENRE_CHOICES = (
-    ('horror','HORROR'),
+    ('horror', 'HORROR'),
     ('drama', 'DRAMA'),
-    ('action','ACTION'),
-    ('comedy','COMEDY'),
-    ('sci-fi','SCI-FI'),
-    ('western','WESTERN'),
+    ('action', 'ACTION'),
+    ('comedy', 'COMEDY'),
+    ('sci-fi', 'SCI-FI'),
+    ('western', 'WESTERN'),
     ('thriller', 'THRILLER'),
-    ('documentary','DOCUMENTARY'),
-    ('fantasy','FANTASY'),
-    ('romance','ROMANCE'),
-    ('crime','CRIME'),
+    ('documentary', 'DOCUMENTARY'),
+    ('fantasy', 'FANTASY'),
+    ('romance', 'ROMANCE'),
+    ('crime', 'CRIME'),
 )
 
 
 class Movie(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, default=uuid.uuid4) #editable=False
+    slug = models.SlugField(max_length=200, unique=True, default=uuid.uuid4)
     year = models.IntegerField(('year'), default=datetime.datetime.now().year)
-    genre = models.CharField(max_length=15, choices=GENRE_CHOICES, default='horror')
+    genre = models.CharField(
+        max_length=15, choices=GENRE_CHOICES, default='horror')
     featured_image = CloudinaryField('image', default='placeholder')
     synopsis = models.TextField()
     director = models.CharField(max_length=200, unique=False)
@@ -49,9 +50,11 @@ class Movie(models.Model):
 
 class Review(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    film = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="reviews")
+    film = models.ForeignKey(
+        Movie, on_delete=models.CASCADE, related_name="reviews")
     slug = models.SlugField(max_length=200, unique=True, null=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="review_author")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="review_author")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
