@@ -1,7 +1,6 @@
 from film.models import Movie
 from django import forms
 
-
 class FilmForm(forms.ModelForm):
     year = forms.IntegerField(
         min_value=1000,
@@ -25,11 +24,3 @@ class FilmForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.instance = kwargs.get('instance', None)
         super().__init__(*args, **kwargs)
-
-    def clean_title(self):
-        title = self.cleaned_data.get('title')
-        if Movie.objects.filter(title__iexact=title).exclude(
-                id=self.instance.id).exists():
-            raise forms.ValidationError(
-                "A film with this title already exists.")
-        return title

@@ -2,7 +2,6 @@ const editButtons = document.getElementsByClassName("btn-edit");
 const filmTitleInput = document.getElementById("id_title");
 const filmYearInput = document.getElementById("id_year");
 const filmGenreInput = document.getElementById("id_genre");
-/*const filmImageInput = document.getElementById("id_featured_image");*/
 const filmSynopsisInput = document.getElementById("id_synopsis");
 const filmDirectorInput = document.getElementById("id_director");
 const filmForm = document.getElementById("filmForm");
@@ -44,7 +43,6 @@ for (let button of editButtons) {
     let filmTitle = document.getElementById(`title${filmId}`).innerText;
     let filmYear = document.getElementById(`year${filmId}`).innerText;
     let filmGenre = document.getElementById(`genre${filmId}`).innerText;
-    /*let filmImage = document.getElementById(`featured_image${filmId}`).innerText;*/
     let filmSynopsis = document.getElementById(`synopsis${filmId}`).innerText;
     let filmDirector = document.getElementById(`director${filmId}`).innerText;
 
