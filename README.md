@@ -52,6 +52,21 @@ The target audience can be wide for movie watchers but as this is a digital revi
 #### Add film to review - Must have
 * As an admin, I can add a film subject so that site visitors can see the upcoming film to watch and add reviews.
 
+#### Comment on a review - Could have
+* As a user I can comment on review's posted on a film so that I can share my opinion on a review.
+
+#### Rate films - Could have
+* As a user, I can leave a film rating so that I can reflect my opinion of the film.
+
+#### Like comments and review - Could have
+* As a user I can like 'like' comments and reviews so that I can interact with posts on the site to show my opinion.
+
+#### Edit comments - Could have
+* As a user, I can edit my comments so that I can amend what I have written.
+
+#### Delete Comments - Could have
+* As a user, I can delete my comment so that I remove my unwanted comments from the site.
+
 
 ## Scope Plane
 I identified 2 main pages were needed for the website to be able to functon as required;
@@ -252,30 +267,28 @@ As a user when I visit the site the navbar pn the right tells me I am not logged
 
 When I click on 'Register' this takes me to the 'Register' page, I need to fill in the form: create a username, email(optional), password and confirm the password. If I already have an account there is a link to the login page, when I click on the link, this takes me to the Login page.
 
-![register](test_register)
+![register](media/testing/test_register.JPG)
 
 I am unable to create an account with a username that already exists, the password cannot be similar to the username, must have atleast 8 characters and can't fully numbers.
 
 I fill out the form with a test account; username: john_doe
 After submitting the form successfully I am signed in as john_doe, a notification tells me at the top of the screen and on the nav bar.
 
-![register](test_login)
-![logout](test_signout2)
+![register](media/testing/test_login.JPG)
+![logout](media/testing/test_signout2.JPG)
 
 I can log out by navigating to the 'logout' page on the nav bar, the sites confirms that I do want to log out.
 
-![logout](test_signout)
-
 To log back in I click the log on link in the nav bar, this takes me to the login page. I fill out the form with the username and password I used to create the account an log back in.
 
-![login](test_login2)
+![login](media/testing/test_login2.JPG)
 
 
 #### Catalogue of film subjects
 On the homepage hero image there is button in red 'Film Catalogue' and the the link at the top of the page 'Films' which takes the user to the bottom of the homepage where the catalogue exists for a user to be able to click into a film to visit the film's page, expand its details, view reviews on the film and a user can post reviews on the film here.
 
-![cat](test_cat1)
-![cat](test_cat2)
+![cat](media/testing/test_cat1.JPG)
+![cat](media/testing/test_cat2.JPG)
 
 
 #### Post a review on a film
@@ -283,23 +296,22 @@ If I click into a film the film_details page loads for the film. I can see the f
 
 I have clicked into the 'Monkey Man' film, underneath the films details there are no reviews as none have been posted. There is a review form next to the review section for me to type my own reviews. I fill this form out, I used existing reviews I have found on Google reviews as example to test the function.
 
-![review](test_review1)
+![review](media/testing/test_review1.JPG)
 
 I submit the review, the page reloads with a notification the review has been submitted and the review appears with the title, content, author, date & time.
 
-![review](test_review2)
+![review](media/testing/test_review2.JPG)
 
 To test the review form, views, edit and delete functionality properly, I have clicked into 'The Wailing' film where 2 reviews already exist. As john_doe I will post another review.
 When I submit the review, this is added to the review section and as this is ordered on latest the review appears at the top. The review count also increases from 2 to 3 as the number of reviews increases.
 
 The edit and delete buttons appear only next to the review I have posted as 'john_doe'. I am unable to edit reviews from the other users.
 
-![review](test_review3)
 
 #### Edit & delete reviews
 When I click the edit button this populates the review form with the title and content for the user to update. I can update the content to anything I want and hit the update button. This refreshes the page with the entries updated with what I have typed and a notification is provided the review has been updated.
 
-![review](test_review4)
+![review](media/testing/test_review4.JPG)
 
 To delete the review I simply hit the delete button, this prompts the delete modal to appear for the user to confirm deletion as the review will be deleted permenantly. Once confirmed this deletes the review, a notification is shown and the review no longer exists.
 
@@ -307,53 +319,41 @@ To delete the review I simply hit the delete button, this prompts the delete mod
 #### Add film to a review
 To add a film, the Posts page will need to be accessed, only an admin can access this page. To test the page I have logged in as an admin and accessed the page.
 
-![film](test_film1)
+![film](media/testing/test_film1.JPG)
 
 I can see the film form on the left side of the page and the catalogue of films listed on the right with edit and delete buttons.
 
 As an admin I fill in the form with a new films detail, I have not selected an image for this film post as a placeholder image should be provided until the admin supplies the film with an image.
 
-![film](test_film2)
+![film](media/testing/test_film2.JPG)
 
 I submit the film, a notification is provided the film has been added and the film now appears on the catalogue list. The film also appears on the homepage under the films section and I can click into it to add and view reviews.
 
-![film](test_film3)
-
 To test if images for films can be uploaded, I made another film entry for 'Batman', the image appears on the homepage and when I click into the film's detail page.
 
-![film](test_film4)
+![film](media/testing/test_film4.JPG)
 
 #### Add films to a genre category
 There is a dropdown in the film form to select the genre for the film which is submitted and part of the film's detail.
 
 #### Edit & delete films
 If I click the edit button, the film form populates with the film's details and I can update any detail of the film.
-
-![film](test_film5)
-
 I can edit 'Batman' film details to a another film 'There will be blood'. The 'Batman' film's details have changed to the There Will be Blood in the catalogue section, homepage and the film's details page.
 
-![film](test_film6)
+![film](media/testing/test_film6.JPG)
 
 To delete a film entry I can delete a film by clicking the delete button underneath a film in the posts page. This brings up the delete confirmation modal. After clicking yes this deletes the film entry permanantly and any reviews under it if there were any.
 
-![film](test_film7)
-
+![film](media/testing/test_film7.JPG)
 
 
 ## Code Validation
-
-### HTML W3C
+### HTML W3C Validator
 I have checked HTML validator, there were errors in the syntax for the base, post_film and register pages due to 'p' tags within json file for synopsis and nav class having redundant boostrap classes.
-
 These have been corrected and are no longer showing errors.
-
 There are error when I paste the register page address in the validator but these are not actually errors from the code, they are coming from Django forms interpretation of allauths helper text.
 
-![html_val](register_errors)
-
-
-### CSS W3C
+### CSS W3C Validator
 No errors found
 
 ### Javascript JSHint
@@ -363,11 +363,11 @@ both revews.js and films.js no issues - undefined variable on jshint but if remo
 All python files have been put through the CI Python Linter, there were had errors where regarding spacing, indentation line being too. These have now been resolved and no errors are being shown. 
 
 ### JSON Validator
-I have used 2 different validators to check the json code [JSON Lint](https://jsonlint.com/) and [Json Formatter](https://www.toptal.com/developers/json-formatter)
+I have used 2 different validators to check the json code on validators [JSON Lint](https://jsonlint.com/) and [Json Formatter](https://www.toptal.com/developers/json-formatter)
 Both of the validators process the code as valid.
 
-![json_val1](register_errors)
-![json_val2](register_errors)
+![json_val1](media/validator/json_val.JPG)
+![json_val2](media/validator/json_val2.JPG)
 
 
 ## Bugs and Fixes
@@ -401,10 +401,90 @@ However bugs will not appear when the form is submitted;
 
 
 ## Deployment
+### GitHub
+* Within the repository, go to settings then into the Pages tab. Under 'Build and Deployment', Source set to Deploy from branch. Branch selected to main and the root folder.
+
+### Heroku
+Heroku is where the website is deployed.
+
+#### Create an app
+* Login/create an account on Heroku.
+* Create a new application choosing a unique name.
+* Select the appropriate region.
+* 'Create App'.
+
+#### Connect to GitHub repo
+* Select Connect to GitHub
+* Enter repo-name and connect
+
+#### Settings
+* Within Settings under Config Vars - Reveal Config Vars
+* Enter Key: DATABASE_URL | Value: copy database url the chosen postgresql data - NeonDB
+* Enter Key: SECRET_KEY | Value: 'chosen secret key'
+* Enter Key: CLOUDINARY_URL | Value: 'Copy API environment variable with the API Key and API secret'.
+
+#### Workspace files
+Ensure;
+* A Procfile exists in the directory which contains web: gunicorn 'your project'.wsgi:application
+* A env.py file with the database and cloudinary URLs and the secret key.
+* A runtime.txt with closest python version being used supported by heroku.
+* A requirements.txt file with all the installed apps.
+* App Setting file - Ensure heroku is trusted and an allowed host, Debug=False along with the neccesary apps installed listed.  
+
+### Deploy
+On Heroky under deploy ensure the branch to deploy is main and hit 'Deploy Branch'.
+Once this is loaded scroll to top to Deploy the app.
+
 
 ## Lessons Learned
 Not enough user stories
+* User stories could have been more granular as could have been split into the individual stories
+* Other user stories could have been identified before the start of the project.
+
 
 ## Technologies Used
+### Planning
+* Balsamiq - Create wireframes
+* dbdiagram.io - Database model
+
+### Languages
+* HTML - Django template pages have been used and web pages created.
+* CSS - Style web pages.
+* Javascript - Edit and delelte buttons.
+* Python - Used to create views, models, urls, admin, app, forms, test files.
+
+### Tools
+* Django - Web framework to develop the website
+* Crispy forms - Format forms
+* Cloudinary - Image database
+* GitHub - Repository for the website and to create a project board to keep track of User Stories
+* CI GitPod Template - Template used to set up the workspace
+* GitPod - IDE
+* NeonDB - Database for the project
+* Heroku - Deploy website
+
+### Styling and Content
+* Bootstrap - Styling in html
+* Font Awesome - Icons
+* Google fonts - Fonts
+* Unsplash - Images
+* Google - Film reiews and film details
+* Wikipedia - Film information
+
 
 ## Credits
+### Coding
+Slugify(https://stackoverflow.com/questions/61279089/name-slugify-is-not-defined)
+Import model from another app(https://forum.djangoproject.com/t/import-model-class-from-another-app/5780)
+super login(https://stackoverflow.com/questions/70991007/how-can-i-set-that-when-user-is-admin-only-then-he-can-view-a-specific-html-page)
+image field testing(https://stackoverflow.com/questions/63476979/unit-testing-django-model-with-an-image-not-quite-understanding-simpleuploaded)
+
+### Troubleshooting
+ChatGPT(https://openai.com/index/chatgpt/)
+Slack Code Institute Community (https://app.slack.com/client/T0L30B202/C026PTF46F5)
+Stackoverflow(https://stackoverflow.com/)
+Tutor Support
+
+### Thanks
+I would like to give my mentor Harry Dhillon thanks as he has been very supportive and provided very good feedback to ensure I am track and my project has what is needed.
+I would also like to give my thanks to the community Slack as the members, mentors and leads have been kind enough to answer my queries when I was in need.
