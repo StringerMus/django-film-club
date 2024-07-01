@@ -201,7 +201,7 @@ The page is only accessible to admin users. Here the admin can add films to the 
 
 
 #### Add a film
-This section contains the form fields needed to add a film. If an image is not uploaded, a placeholder image is supplied on the site until this is updated by the admin. The same title is not able to be submitted on the site to avoid duplication of films being posted.
+This section contains the form fields needed to add a film. If an image is not uploaded, a placeholder image is supplied on the site until this is updated by the admin.
 
 
 #### Film Catalogue
@@ -285,12 +285,12 @@ I have clicked into the 'Monkey Man' film, underneath the films details there ar
 
 ![review](test_review1)
 
-I submit the review, the page reloads with a notification the review has been submitted and the review appears with the title, content, author, date & time. I if 
+I submit the review, the page reloads with a notification the review has been submitted and the review appears with the title, content, author, date & time.
 
 ![review](test_review2)
 
 To test the review form, views, edit and delete functionality properly, I have clicked into 'The Wailing' film where 2 reviews already exist. As john_doe I will post another review.
-When I submit the review, this is added to the review section and as this is ordered on latest the review appears at the top. I am unable to post a review with the same title as an existing one. The review count also increases from 2 to 3 as the number of reviews increases.
+When I submit the review, this is added to the review section and as this is ordered on latest the review appears at the top. The review count also increases from 2 to 3 as the number of reviews increases.
 
 The edit and delete buttons appear only next to the review I have posted as 'john_doe'. I am unable to edit reviews from the other users.
 
@@ -309,7 +309,7 @@ To add a film, the Posts page will need to be accessed, only an admin can access
 
 ![film](test_film1)
 
-I can see the Film form on the left side of the page and the catalogue of films listed on the right with edit and delete buttons.
+I can see the film form on the left side of the page and the catalogue of films listed on the right with edit and delete buttons.
 
 As an admin I fill in the form with a new films detail, I have not selected an image for this film post as a placeholder image should be provided until the admin supplies the film with an image.
 
@@ -324,18 +324,18 @@ To test if images for films can be uploaded, I made another film entry for 'Batm
 ![film](test_film4)
 
 #### Add films to a genre category
-There is a drop in the film form to select the genre for the film which is submitted and part of the film's detail.
+There is a dropdown in the film form to select the genre for the film which is submitted and part of the film's detail.
 
 #### Edit & delete films
-If I click the edit button, the film form populates with the film's details and I can update any detail of the film. The form will not let the user enter the same title as an existing film, this is case insensitive so will pick up lower or uppercase entries.
+If I click the edit button, the film form populates with the film's details and I can update any detail of the film.
 
 ![film](test_film5)
 
-After testing the changing the title entry to the existing film 'Joker' I test editing 'Batman' details to a another film 'There will be blood'. I update this. The 'Batman' film's details have changed to the There Will be Blood in the catalogue section, homepage and the film's details page.
+I can edit 'Batman' film details to a another film 'There will be blood'. The 'Batman' film's details have changed to the There Will be Blood in the catalogue section, homepage and the film's details page.
 
 ![film](test_film6)
 
-To delete a film entry I can delete a film by clicking the delete button underneath a film in the posts page. This brings up the delete confirmation modal. After clicking yes this deletes the film entry permenantly and any reviews under it if there were any.
+To delete a film entry I can delete a film by clicking the delete button underneath a film in the posts page. This brings up the delete confirmation modal. After clicking yes this deletes the film entry permanantly and any reviews under it if there were any.
 
 ![film](test_film7)
 
@@ -350,6 +350,9 @@ These have been corrected and are no longer showing errors.
 
 There are error when I paste the register page address in the validator but these are not actually errors from the code, they are coming from Django forms interpretation of allauths helper text.
 
+![html_val](register_errors)
+
+
 ### CSS W3C
 No errors found
 
@@ -359,29 +362,34 @@ both revews.js and films.js no issues - undefined variable on jshint but if remo
 ### Python PEP8
 All python files have been put through the CI Python Linter, there were had errors where regarding spacing, indentation line being too. These have now been resolved and no errors are being shown. 
 
-### Lighthouse
+### JSON Validator
+I have used 2 different validators to check the json code [JSON Lint](https://jsonlint.com/) and [Json Formatter](https://www.toptal.com/developers/json-formatter)
+Both of the validators process the code as valid.
 
-
+![json_val1](register_errors)
+![json_val2](register_errors)
 
 
 ## Bugs and Fixes
 ### Post form
 #### Year field – need to add restrictions
-* Year can have less and more than 4 figures
-this now fixed by adding a min value of 1000 and max value of 9999 in forms.py
+* Year can have less and more than 4 figures - this now fixed by adding a min value of 1000 and max value of 9999 in forms.py
 
 ### Title field – Invalid input of duplicate titles - fixed
-* Duplicate titles causes page error
-Now fixed to not allow addition of films with an existing title.
+* Same slug key causes error in post film if a new submission is posted as an existing title entry.
+- This has now been fixed. The slugfield in model creates a unique slug id on submission.
 
-* Lowercase titles in post film causes error - Same slug key causes error in post film if a new submission is posted in a different case to existing title entry.
-- This has now been fixed. The slugfield in model creates a unique slug id on submission and the title field in form is case insensitive if the title already exists.
+### Films edit/ delete error
+When there is a title error in edit and admin tries to delete the film being edited, there is a page error.
+Validation from forms has been removed and 'unique=true' in title model to ensure same titles can be submitted as this will be the responsibility of the admin to ensure no duplicates are posts.
+Same has been done for reviews to ensure consistency.
 
 ### Currently field 
 * This field appears under the Image if a error is notified - fixed by adding the class in css to 'display:none;' as theire that appears with the field in html.
 
 ### Time
 * The times that are being recorded next to each post is 1 hour behind. This has now been fixed by adding GB in the settings timezone.
+
 
 ### Unresolved bug
 #### The year field in Post film form

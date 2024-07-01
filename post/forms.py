@@ -1,6 +1,7 @@
 from film.models import Movie
 from django import forms
 
+
 class FilmForm(forms.ModelForm):
     year = forms.IntegerField(
         min_value=1000,
