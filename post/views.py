@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from film.models import Movie
 from .forms import FilmForm
+from django.contrib.auth.decorators import permission_required #new
 
 
 class FilmList(generic.ListView):
@@ -11,7 +12,7 @@ class FilmList(generic.ListView):
     template_name = "post/post_film.html"
     context_object_name = "movie_list"
 
-
+@permission_required('film.add_movie', raise_exception=True) #new
 def post_film(request):
     if request.method == "POST":
         film_form = FilmForm(request.POST, request.FILES)
