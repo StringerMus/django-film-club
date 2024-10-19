@@ -104,21 +104,21 @@ A user will be introduced to the website with a hero image and a welcome message
 
 The nav bar on the homepage wireframe is what it will look like for a user who has not logged in. The homepage and logo will always take the user to the homepage, and the 'films' link will take the user to the bottom of the catalogue. The links to register and log in will give users the option to create an account or login if the user has an account already.
 
-![homepage](media/skeleton_pl/homepage wireframe.JPG)
+![homepage](media/skeleton_pl/homepage_wireframe.JPG)
 
 ### Film Details
 The page will hold film information and images. Below this will display the reviews that have been posted by users of the film and beside there will be a form that can be filled out for users to leave their own reviews. Only logged-in users can leave a review.
 
 The nav is what will look like for a logged-in user, the option for logout is present instead of 'login' and 'register'.
 
-![filmdetail](media/skeleton_pl/film_detail wireframe.JPG)
+![filmdetail](media/skeleton_pl/film_detail_wireframe.JPG)
 
 ### Post Film
 This page will only be available for an admin user. This can be seen on the navbar the 'Posts' link only appears for admins.
 
 This page is where a new film can be added by filling out the form. This page will also contain a list of films on the website, delete and edit buttons can be added here for admins to either delete or edit the entries.
 
-![post](media/skeleton_pl/post_film wireframe.JPG)
+![post](media/skeleton_pl/post_film_wireframe.JPG)
 
 ## Surface Plane
 ### Colour theme
@@ -358,6 +358,9 @@ The same has been done for reviews to ensure consistency.
 
 ### Time
 * The times that are being recorded next to each post are 1 hour behind. This has now been fixed by adding GB in the settings time zone.
+
+### Unauthorised Post page access
+* Any users can access the post page via url input. This has now been fixed by adding a permissions requirement to the page and now only authorised admin can now access the page. Custom 403 and 404 pages have now also been included to redirect users.
 
 ## Unresolved bug
 #### The year field in Post film form
