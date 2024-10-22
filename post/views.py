@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from film.models import Movie
 from .forms import FilmForm
-from django.contrib.auth.decorators import permission_required #new
+from django.contrib.auth.decorators import permission_required
 
 
 class FilmList(generic.ListView):
@@ -17,7 +17,7 @@ class FilmList(generic.ListView):
 def post_film(request):
     if request.method == "POST":
         film_form = FilmForm(request.POST, request.FILES)
-        if film_form.is_valid():
+        if film_form.is_valid() and request.user.is_staff is True:
             film_form.save()
             messages.add_message(
                 request, messages.SUCCESS,
@@ -50,7 +50,7 @@ def film_edit(request, movie_id):
         film_form = FilmForm(
             data=request.POST, files=request.FILES, instance=movie)
 
-        if film_form.is_valid():
+        if film_form.is_valid() and request.user.is_staff is True:
             film_form.save()
             messages.add_message(request, messages.SUCCESS, 'Film updated!')
             return HttpResponseRedirect(reverse('post_film'))
@@ -74,6 +74,7 @@ def film_edit(request, movie_id):
 def film_delete(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
 
-    movie.delete()
-    messages.add_message(request, messages.SUCCESS, 'Film deleted!')
-    return HttpResponseRedirect(reverse('post_film'))
+    if request.user.is_staff is True:
+        movie.delete()
+        messages.add_message(request, messages.SUCCESS, 'Film deleted!')
+        return HttpResponseRedirect(reverse('post_film'))
