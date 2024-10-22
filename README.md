@@ -360,7 +360,7 @@ The same has been done for reviews to ensure consistency.
 * The times that are being recorded next to each post are 1 hour behind. This has now been fixed by adding GB in the settings time zone.
 
 ### Unauthorised Post page access
-* Any users can access the post page via url input. This has now been fixed by adding a permissions requirement to the page and now only authorised admin can now access the page. Custom 403 and 404 pages have now also been included to redirect users.
+* Any users can access the post page via url input. This has now been fixed by adding a permissions requirement to the page and now only authorised admin can now access the page. Custom 403, 404 and 500 pages have now also been included to redirect users.
 
 ## Unresolved bug
 #### The year field in Post film form
